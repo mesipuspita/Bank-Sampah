@@ -40,10 +40,10 @@
 							<span class="nav-text">Transaksi</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="{{ url('transaksi')}}">Penjualan</a></li>
+							<li><a href="{{ url('transaksi')}}">Transaksi Stor</a></li>
 						</ul>
                         <ul aria-expanded="false">
-							<li><a href="{{ route('data-penarikan')}}">Penarikan Uang</a></li>
+							<li><a href="{{ route('data-penarikan')}}">Transaksi Tarik</a></li>
 						</ul>
 						<ul aria-expanded="false">
 							<li><a href="{{ url('tabungan')}}">Tabungan</a></li>
@@ -118,18 +118,16 @@
                         <ul aria-expanded="false">
 							<li><a href="{{ url('transaksi')}}">Penjualan</a></li>
 						</ul>
-                        <ul aria-expanded="false">
+                        <!-- <ul aria-expanded="false">
 							<li><a href="{{ url('detail')}}">Penarikan Uang</a></li>
-						</ul>
-                    </li>
-                    </li>
-                    
-                        <li><a href="{{ url('datasampah')}}" class="ai-icon" aria-expanded="false">
+						</ul> -->
+                    </li>	
+                    <li><a href="{{ url('tabungan')}}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-settings-2"></i>
-							<span class="nav-text">Laporan</span>
+							<span class="nav-text">Tabungan</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="{{ url('laporan')}}">Laporan Bulanan</a></li>
+							<li><a href="{{ url('data_detail')}}">Detail Transaksi</a></li>
 						</ul>
 					</li>
 

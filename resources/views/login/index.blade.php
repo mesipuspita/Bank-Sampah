@@ -18,13 +18,15 @@
         <div class="container h-100">
             <div class="row justify-content-center h-100 align-items-center">
                 <div class="col-md-6">
+                <div style="background-color: #191970 !important;">
                     <div class="authincation-content">
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
+                                
                                     <center>
                                         <h3 class="text-center mb-4">Welcome To </h3>
-                                            <img src="{{asset('asset/image/p.png') }}" style="" width="300" height="200" alt="" title="">
+                                            <img src="{{asset('asset/image/y.png') }}" style="" width="300" height="300" alt="" title="">
                                             @if ($message = Session::get('success'))
                                         <div class="alert alert-success alert-block">
                                             <button type="button" class="close" data-dismiss="alert">×</button>    
@@ -74,9 +76,10 @@
                                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                                         </div>
                                     </form>
-                                    <div class="new-account mt-3">
-                                        <p>Don't have an account? Contact me <a class="text-primary" href="{{('register')}}">Sign up</a></p>
-                                    </div>
+                                    
+                                        <div class="new-account mt-3">
+                                            <p>Don't have an account? Contact me <a class="text-primary" href="{{('register')}}">Sign up</a></p>
+                                        </div>
                                 </div>
                             </div>
                         </div>

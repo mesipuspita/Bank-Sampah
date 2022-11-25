@@ -1,10 +1,13 @@
 <!--**********************************
             Nav header start
         ***********************************-->
+        
         <div class="nav-header" style="background-color: #191970 !important;">
-            <!-- <a href="index.html" class="brand-logo">
-             <img src="{{asset('asset/image/depan.jpg')}}" style="center" width="150" height="100" alt="" title="">
-            </a> -->
+            <a href="index.html" class="brand-logo">
+                <div>
+                  <img src="{{asset('asset/image/y.png')}}" style="left" width="150" height="150" alt="" title="BANK SAMPAH">
+</div>
+            </a>
 
             <div class="nav-control">
                 <div class="hamburger">

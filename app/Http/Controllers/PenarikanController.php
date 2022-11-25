@@ -28,7 +28,7 @@ class PenarikanController extends Controller
      */
     public function create()
     {
-        return view('penarikan.Create-penarikan');
+        return view('penarikan.Data-penarikan');
     }
 
     /**
