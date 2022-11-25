@@ -96,8 +96,10 @@
                             <th scope="col">No </th>
                             <!-- <th scope="col">Nama</th> -->
                             <th scope="col">Kategori Sampah</th>
-                            <th scope="col">harga</th>
                             <th scope="col">Satuan</th>
+                            <th scope="col">harga</th>
+                            <th scope="col">Deskripsi</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Aksi</th>
                             <!-- <th scope="col">Id Satuan</th>          -->
                           </tr>
@@ -110,6 +112,13 @@
                         <td>{{$item->jenis_sampah}}</td>
                         <td>{{$item->satuan}}</td>
                         <td>{{$item->harga}}</td>
+                        <td>{{$item->keterangan}}</td>
+                        <td>
+                        <div class="ml-auto">
+                              <a href="#" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-check "></i></a>
+                             
+                            </div>
+                        </td>
                         <td>
                             <div class="ml-auto">
                               <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>

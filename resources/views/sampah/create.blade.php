@@ -38,12 +38,11 @@
                         <div class="form-group">
                             <strong>Jenis Sampah</strong>
                             <select type="text" name="jenis_sampah" class="form-control" placeholder="">
-                            <option value="Kertas/Buku/Kardus">Kertas/Buku/Kardus</option>
-                            <option value="Botol Plastik">Plastik</option>
-                            <option value="Botol Kaca">Botol Kaca</option>
-                            <option value="Plastik Minyak kemasan">Plastik Minyak Kemasan</option>
+                            <option value="Alumunium">Alumunium</option>
                             <option value="Besi">Besi</option>
-
+                            <option value="Kertas">Kertas</option>
+                            <option value="Botol">Botol</option>
+                            <option value="Lain-lain">Lain-lain</option>
                             </select>
                         </div>
                     </div>
@@ -53,6 +52,14 @@
                             <input type="text" name="harga" class="form-control" placeholder="">
                         </div>
                     </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Deskripsi</strong>
+                            <input type="text" name="keterangan" class="form-control" placeholder="">
+                        </div>
+                    </div>
+
+                    
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Id Satuan</strong>

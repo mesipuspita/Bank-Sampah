@@ -50,6 +50,12 @@
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="form-group">
+                                        <strong>Deskripsi :</strong>
+                                        <input type="text" name="keterangan" value="{{ $sampah->keterangan }}" class="form-control" placeholder="Harga">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
                                         <strong>satuan:</strong>
                                         <input type="text" name="id_satuan" value="{{ $sampah->id_satuan }}" class="form-control" placeholder="Harga">
                                     </div>
