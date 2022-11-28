@@ -36,30 +36,28 @@
             
                 <tr>
                     <th> NO</th>
-                    <th> No KK </th>
-                    <th> NIK</th>
                     <th> Nama</th>
-                    <th >Gender</th>
-                    <th >Tanggal Lahir</th>
-                    <th >NO Telepon</th>
-                    <th >Agama</th>
-                    <th >Pendidikan</th>
-                    <th >Pekerjaan</th>
-                    <th >Alamat</th>
+                    <th> TGL</th>
+                    <th> Jenis Sampah</th>
+                    <th> Satuan</th>
+                    <th >Jumlah KIlo</th>
+                    <th >Harga/kg</th>
+                    <th >Total Jumlah</th>
+                    <th >Bukti Transaksi</th>
+                    
                 </tr>
                 @foreach($dtcetak as $item)
                  <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$item->nokk}}</td>
-                    <td>{{$item->nik}}</td>
+                    <td>{{$item->nama_warga}}</td>
+                    <td>{{$item->tgltransaksi}}</td>
+                    <td>{{$item->satuan}}</td>
                     <td>{{$item->nama_warga}}</td>
                     <td>{{$item->gender}}</td>
                     <td>{{$item->tgllahir}}</td>
                     <td>{{$item->notelepon}}</td>
                     <td>{{$item->agama}}</td>
-                    <td>{{$item->pendidikan}}</td>
-                    <td>{{$item->pekerjaan}}</td>
-                     <td>{{$item->statustinggal}}</td>
+                    
                 </tr>
                     @endforeach
              </table>

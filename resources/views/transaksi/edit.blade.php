@@ -22,7 +22,7 @@
         </div>
     @endif
   
-    <form action="{{url('update',$trans->id)}}" method="POST">
+    <form action="{{url('update',$trans->id_transaksi)}}" method="POST">
         @csrf
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">

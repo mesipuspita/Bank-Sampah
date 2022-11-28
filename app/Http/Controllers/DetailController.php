@@ -14,29 +14,15 @@ class DetailController extends Controller
      */
     public function index()
     {
-
         $dtdetail = DB::table('detail_transaksi')
         ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
         ->leftJoin('sampah','sampah.id_sampah','=','detail_transaksi.id_sampah')
         ->leftJoin('wargas','wargas.id_warga','=','detail_transaksi.id_warga')
         ->leftJoin('transaksi','transaksi.id_transaksi','=','detail_transaksi.id_transaksi')
-        ->paginate(10);
+        ->paginate(50);
         // dd($dtdetail);
         return view('detail.data-detail', compact('dtdetail'));
     }
-    public function cetakdetail()
-    {
-        $dtcetak = DB::table('detail_transaksi')
-        ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
-        ->leftJoin('sampah','sampah.id_sampah','=','detail_transaksi.id_sampah')
-        ->leftJoin('wargas','wargas.id_warga','=','detail_transaksi.id_warga')
-        ->leftJoin('transaksi','transaksi.id_transaksi','=','detail_transaksi.id_transaksi')
-        ->get();
-        // dd($dtdetail);
-        return view('detail.cetak-detail', compact('dtcetak'));
-    }
-
-
     /**
      * Show the form for creating a new resource.
      *
@@ -64,6 +50,9 @@ class DetailController extends Controller
         // dd($id_satuan());
         $request->validate([
             'id_satuan'        =>'required',
+            'total_jumlah'     =>'required',
+            'jenis_sampah'     =>'required',
+
          ]);
         // dd($request->all());
 
@@ -120,5 +109,16 @@ class DetailController extends Controller
     {
         $data = Detail::findorfail($id_detail);
         $data->delete();
+    }
+    public function cetakdetail()
+    {
+        $dtcetak = DB::table('detail_transaksi')
+        ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
+        ->leftJoin('sampah','sampah.id_sampah','=','detail_transaksi.id_sampah')
+        ->leftJoin('wargas','wargas.id_warga','=','detail_transaksi.id_warga')
+        ->leftJoin('transaksi','transaksi.id_transaksi','=','detail_transaksi.id_transaksi')
+        ->get();
+        // dd($dtdetail);
+        return view('detail.cetak-detail', compact('dtcetak'));
     }
 }
