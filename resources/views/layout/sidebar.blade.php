@@ -43,11 +43,9 @@
 							<li><a href="{{ url('transaksi')}}">Transaksi Stor</a></li>
 						</ul>
                         <ul aria-expanded="false">
-							<li><a href="{{ route('data-penarikan')}}">Transaksi Tarik</a></li>
+							<li><a href="{{ url('tabungan')}}">Transaksi Tarik</a></li>
 						</ul>
-						<ul aria-expanded="false">
-							<li><a href="{{ url('tabungan')}}">Tabungan</a></li>
-						</ul>
+						
                     </li>
                     
 					<li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">

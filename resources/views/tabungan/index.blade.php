@@ -1,11 +1,36 @@
 @extends('master')
 @section('content')
-    <div class="row">
-        <!-- <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-            <a class="btn btn-success" href="{{ route('tabungan.create') }}"> Input Data</a>
-            </div>
-        </div> -->
+<div class="row">
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+		<div class="widget-stat card bg-danger">
+			<div class="card-body  p-4">
+				<div class="media">
+					<span class="mr-3">
+						<i class="flaticon-381-calendar-1"></i>
+					</span>
+					<div class="media-body text-white text-right">
+					    <p class="mb-1">Jumlah Tabungan</p>
+					    <h3 class="text-white"></h3>
+				    </div>
+			    </div>
+		    </div>
+	     </div>
+    </div>
+    <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
+		<div class="widget-stat card bg-success">
+			<div class="card-body p-4">
+				<div class="media">
+					<span class="mr-3">
+						<i class="flaticon-381-diamond"></i>
+					</span>
+					<div class="media-body text-white text-right">
+						<p class="mb-1">Total Dana Tarik</p>
+						<h3 class="text-white"></h3>
+					</div>
+				</div>
+		    </div>
+		</div>
+    </div>
 
         <div class="row">
     <div class="col-12">
@@ -23,10 +48,9 @@
                                     <tr>
                                         <th scope="col">No</th>
                                         <th scope="col">Nama Warga</th>
-                                        <th scope="col">Nik</th>
-                                        <th scope="col">total Tabungan</th>
-                                        
-                                       
+                                        <th scope="col">NIK</th>
+                                        <th scope="col">Total Tabungan</th> 
+                                        <th scope="col">Tarik Tabungan</th> 
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -36,8 +60,10 @@
                                             <td>{{$item->nama_warga}}</td>
                                             <td>{{$item->nik}}</td>
                                             <td>{{$item->total_jumlah}}</td> 
-                                        
-                                            
+                                            <td>
+                                                <a href="{{route('tabungan.create',$item->id_detail)}}"  class="btn btn-danger sharp mr-6"><i class='fa fa-money'></i></a> 
+                                                <a href="{{route('tabungan.create')}}"  class="btn btn-danger sharp mr-6"><i class="fa fa-eye"></i></a>   
+                                            </td> 
                                          </tr>
                                     @endforeach
                                     

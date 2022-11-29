@@ -31,6 +31,7 @@
                             <th scope="col">Pendidikan</th>
                             <th scope="col">Pekerjaan</th>
                             <th scope="col">Alamat</th>  
+                            <th scope="col">Kartu</th> 
                           </tr>
                         </thead>
                         <tbody>
@@ -47,6 +48,9 @@
                             <td>{{$item->pendidikan}}</td>
                             <td>{{$item->pekerjaan}}</td>
                             <td>{{$item->statustinggal}}</td>
+                            <td>
+                            <a href="#"><i class="fa fa-id-card" aria-hidden="true"></i></a>
+                            </td>
                            
                           </tr>
                           @endforeach

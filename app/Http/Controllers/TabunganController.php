@@ -15,7 +15,9 @@ class TabunganController extends Controller
     }
     public function create()
     {
-        return view('tabungan.create');
+        $data['detail_transaksi'] = DB::table('detail_transaksi')->get();
+        $data['data'] = DB::table('wargas')->get();
+        return view('tabungan.create',$data);
     }
      /**
      * Store a newly created resource in storage.
@@ -24,12 +26,12 @@ class TabunganController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
         $request->validate([
             'total_jumlah' => 'required',
             'nama_warga'   => 'required',  
-            'nik'   => 'required', 
+            'nik'          => 'required', 
         ]);
         tabungan::create($request->all());
         return redirect()->route('tabungan.index')->with('success','Data berhasil di input');

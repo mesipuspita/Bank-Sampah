@@ -114,8 +114,7 @@
                         <td>{{$item->harga}}</td>
                         <td>{{$item->keterangan}}</td>
                         <td>
-                        <div class="ml-auto">
-                              <a href="#" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-check "></i></a>
+                        <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                              
                             </div>
                         </td>

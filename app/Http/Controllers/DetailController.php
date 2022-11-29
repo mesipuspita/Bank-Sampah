@@ -1,8 +1,9 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Detail;
+use App\Transaksi;
 use DB;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 
 class DetailController extends Controller
@@ -30,7 +31,11 @@ class DetailController extends Controller
      */
     public function create( )
     {
-        return view('detail.create-detail');
+        $data['detail_transaksi'] = DB::table('detail_transaksi')->get();
+        $data['data'] = DB::table('wargas')->get();
+        $data['data'] = DB::table('sampah')->get();
+        return view('detail.create-detail',$data);
+       
         // $data['transaksi'] = DB::table('transaksi')->whereId($id_transaksi)->first();
     
     }
@@ -49,9 +54,8 @@ class DetailController extends Controller
     {
         // dd($id_satuan());
         $request->validate([
-            'id_satuan'        =>'required',
-            'total_jumlah'     =>'required',
             'jenis_sampah'     =>'required',
+            
 
          ]);
         // dd($request->all());

@@ -8,7 +8,7 @@ use DB;
 
 class TransaksiController extends Controller
 {
-    
+
     public function index()
     {
         $data = DB::table('transaksi')
