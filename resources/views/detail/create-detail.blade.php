@@ -80,7 +80,6 @@
                                             <input class="form-control" id="text_harga" type="text" name="harga" value="" readonly>
                                         </div>
                                     </div>
-
                                     <div class="col-xl-4">
                                     <div class="card">
                                         <div class="card-header">

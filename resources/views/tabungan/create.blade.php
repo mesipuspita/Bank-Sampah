@@ -24,28 +24,32 @@
                                 <div class="row form-material">
                                     <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                     <label>Nama Warga</label>
-                                    <select type="text" class="form-control" id="nama_warga" name="nama_warga" placeholder="Enter a username..">
+                                    <select type="text" class="form-control" onchange="detectChange(this)" id="nama_warga" name="nama_warga" placeholder="Enter a username..">
                                             @foreach($data as $item)
-                                                <option value="{{$item->id_warga}}">{{$item->nama_warga}}</option>
+                                                <option value="{{$item->id_warga}}"  data-nik="{{$item->nik}}" data-total="{{$item->nik}}" > {{$item->nama_warga}} </option>
+                                                
                                             @endforeach
                                         </select>
                                     </div>
                                     
                                     <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                         <label>NIK</label>
-                                        <select type="text" class="form-control" id="nik" name="nik" placeholder="Enter a username..">
-                                            @foreach($data as $item)
-                                                <option value="{{$item->id_warga}}">{{$item->nik}}</option>
-                                            @endforeach
-                                        </select>
+                                        <input type="text" class="form-control"  id="text_nik" name="nik" placeholder="Enter a username.." readonly>
                                     </div>
                                     <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                         <label>Total Tabungan</label>
-                                        <input class="form-control" id="timepicker" placeholder="" name="total_jumlah">
+                                        <input class="form-control" id="text_total_tabungan"  placeholder="Rp." name="total_jumlah" readonly>
                                     </div>
                                     <div class="col-xl-3 col-xxl-6 col-md-6">
                                         <label>Jumlah Tarik</label>
-                                        <input type="text" class="form-control"  name="total_jumlah" placeholder="" id="">
+                                        <input type="text" class="form-control" onchange="hitungTotal(this)" name="total_jumlah" placeholder="Rp." id="text_tarik">
+                                    </div>
+                                    <div class="col-xl-4">
+                                    <div class="card">
+                                        <div class="card-header"> 
+                                            <label class="card-title"><h5>Sisa Tabungan</h5></label>
+                                            <input name="text" id="text_sisa" class="form-control"  name="sisa" placeholder=" Rp."readonly>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -58,6 +62,21 @@
                 </div>
             
             </form>
+            <script>
+                function detectChange(selectOS){
+                    var nik = $("#nama_warga"). find(':selected').attr('data-nik');
+                    document.getElementById("text_nik").value = nik;
+
+                    var total = $("#nama_warga"). find(':selected').attr('data-totaljumlah');
+                    document.getElementById("text_total_tabungan").value = nik;
+                } 
+                function hitungTotal(selectOS){
+                    var total_jumlah = selectOS.value;
+                    var total = $("#nama_warga"). find(':selected').attr('data-totaljumlah');
+                    var sisa = total - tarik ;
+                    document.getElementById("text_total").value = total; 
+        }  
+            </script>
         </div>
     </div>
 @endsection

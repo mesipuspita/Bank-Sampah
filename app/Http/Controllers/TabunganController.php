@@ -29,7 +29,7 @@ class TabunganController extends Controller
     public function store(Request $request )
     {
         $request->validate([
-            'total_jumlah' => 'required',
+            'total' => 'required',
             'nama_warga'   => 'required',  
             'nik'          => 'required', 
         ]);
