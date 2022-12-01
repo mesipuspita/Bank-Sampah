@@ -84,7 +84,7 @@
                                     <div class="card">
                                         <div class="card-header">
                                             <h4 class="card-title">Total</h4>
-                                            <input name="text" id="text_total" class="form-control"  name="total_jumlah" readonly>
+                                            <input  id="text_total" class="form-control"  name="total_jumlah" readonly>
                                         </div>
                                     </div>
 
@@ -99,7 +99,6 @@
                                     </div> 				
                                 </div>
                             </div>
-
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                                 <button type="submit" <a class="btn btn-primary fa fa-plus"> Add</a></button>
                             </div>  

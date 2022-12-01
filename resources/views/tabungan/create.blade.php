@@ -26,7 +26,7 @@
                                     <label>Nama Warga</label>
                                     <select type="text" class="form-control" onchange="detectChange(this)" id="nama_warga" name="nama_warga" placeholder="Enter a username..">
                                             @foreach($data as $item)
-                                                <option value="{{$item->id_warga}}"  data-nik="{{$item->nik}}" data-total="{{$item->nik}}" > {{$item->nama_warga}} </option>
+                                                <option value="{{$item->id_warga}}"  data-nik="{{$item->nik}}" data-totaltabungan="{{$item->nik}}" > {{$item->nama_warga}} </option>
                                                 
                                             @endforeach
                                         </select>
@@ -38,11 +38,11 @@
                                     </div>
                                     <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                         <label>Total Tabungan</label>
-                                        <input class="form-control" id="text_total_tabungan"  placeholder="Rp." name="total_jumlah" readonly>
+                                        <input class="form-control" id="text_total_tabungan"  placeholder="Rp." name="total_tabungan" readonly>
                                     </div>
                                     <div class="col-xl-3 col-xxl-6 col-md-6">
                                         <label>Jumlah Tarik</label>
-                                        <input type="text" class="form-control" onchange="hitungTotal(this)" name="total_jumlah" placeholder="Rp." id="text_tarik">
+                                        <input type="text" class="form-control"  onchange="hitungTotal(this)" name="total_tarik" placeholder="Rp." >
                                     </div>
                                     <div class="col-xl-4">
                                     <div class="card">
@@ -63,20 +63,26 @@
             
             </form>
             <script>
-                function detectChange(selectOS){
+                function detectChange(selectOS)
+                {
                     var nik = $("#nama_warga"). find(':selected').attr('data-nik');
                     document.getElementById("text_nik").value = nik;
 
-                    var total = $("#nama_warga"). find(':selected').attr('data-totaljumlah');
-                    document.getElementById("text_total_tabungan").value = nik;
-                } 
+                    var totaltabungan = $("#nama_warga"). find(':selected').attr('data-nik');
+                    document.getElementById("text_total_tabungan").value = totaltabungan;  
+                    
+                    var berat = document.getElementById("text_berat").value;
+                }
                 function hitungTotal(selectOS){
-                    var total_jumlah = selectOS.value;
-                    var total = $("#nama_warga"). find(':selected').attr('data-totaljumlah');
-                    var sisa = total - tarik ;
+                    var berat = selectOS.value;
+                    var harga = $("#jenis_sampah").find(':selected').attr('data-harga');
+                    var total = berat * harga ;
                     document.getElementById("text_total").value = total; 
-        }  
+                 }
+                
+        
             </script>
+            
         </div>
     </div>
 @endsection

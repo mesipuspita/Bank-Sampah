@@ -32,16 +32,13 @@ class DetailController extends Controller
     public function create( )
     {
         $data['detail_transaksi'] = DB::table('detail_transaksi')->get();
-        $data['data'] = DB::table('wargas')->get();
+        $data['datawarga'] = DB::table('wargas')->get();
         $data['data'] = DB::table('sampah')->get();
+       
         return view('detail.create-detail',$data);
        
         // $data['transaksi'] = DB::table('transaksi')->whereId($id_transaksi)->first();
     
-    }
-
-    public function createDetail(){
-        return view('detail.create-detail');
     }
 
     /**
@@ -54,13 +51,48 @@ class DetailController extends Controller
     {
         // dd($id_satuan());
         $request->validate([
-            'jenis_sampah'     =>'required',
+            'jenis_sampah'       =>'required',
+           
+            // 'nama_warga'         =>'required',
+            // 'id_satuan'             =>'required',
+            // 'total'              =>'required',
+            // 'harga'              =>'required',
             
 
          ]);
         // dd($request->all());
 
-         $data = Detail::create($request->all());
+        //  $data = Detail::create($request->all());
+
+        // dd($request->id_warga);
+
+        if($request->hasFile('gambar')){
+        
+            $data = Detail :: create([
+                'id_warga'=>$request->id_warga,
+                'id_transaksi'=>$request->id_transaksi,
+                'id_satuan'=>$request->id_satuan,
+                'jenis_sampah'=>$request->jenis_sampah,
+                'total'=>$request->total,
+                'harga'=>$request->harga,
+                'total_jumlah'=>$request->total_jumlah,
+                'gambar'=>$request->file('gambar')->getClientOriginalName()
+            ]);
+        }else{
+            
+            $data = Detail :: create([
+                'id_warga'=>$request->id_warga,
+                'id_transaksi'=>$request->id_transaksi,
+                'id_satuan'=>$request->id_satuan,
+                'jenis_sampah'=>$request->jenis_sampah,
+                'total'=>$request->total,
+                'harga'=>$request->harga,
+                'total_jumlah'=>$request->total_jumlah
+            ]);
+        }
+
+
+         
         if($request->hasFile('gambar')){
             $request->file('gambar')->move('gambardetail/',$request->file('gambar')->getClientOriginalName());
             $data->gambar=$request->file('gambar')->getClientOriginalName();

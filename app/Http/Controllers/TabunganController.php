@@ -30,10 +30,25 @@ class TabunganController extends Controller
     {
         $request->validate([
             'total' => 'required',
+            'total_jumlah'   => 'required',  
             'nama_warga'   => 'required',  
             'nik'          => 'required', 
         ]);
         tabungan::create($request->all());
         return redirect()->route('tabungan.index')->with('success','Data berhasil di input');
     }
+    public function show($id)
+    {
+        $data = DB::table('detail_transaksi')
+        ->leftJoin('wargas','detail_transaksi.id_detail','=','wargas.id_warga')
+        ->get();
+        return view('tabungan.index',compact('data'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
 }

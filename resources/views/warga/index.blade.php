@@ -2,14 +2,12 @@
 @section('content')
 
 <div class="container-fluid">
-  <div class="row mb-5 align-items-center">
+  <div class="row mb-5 align-items-left">
 		<div class="col-xl-3 mb-4 mb-xl-0">
-			<a href="{{ route('warga.create')}}" class="btn btn-primary light btn-lg btn-block rounded shadow px-2">+Anggota </a>
-     </div>
-     <!-- <div class="col-xl-3 mb-4 mb-xl-0">
-			<a href="{{ url('cetak-warga')}}" target="_blank" class="btn btn-success light btn-lg btn-block rounded shadow px-2">+Print </a>
-     </div> -->
+			<a href="{{ route('warga.create')}}" <i class="btn btn-primary light btn-lg btn-block rounded shadow px-2" class="fa fa-print" aria-hidden="true"></i> >+Anggota </a>
+    </div>
   </div>
+  <a href="#"><i class="fa fa-id-card" aria-hidden="true"></i></a>
      <div class="row">
          <div class="col-12">
              <div class="card" >
