@@ -89,8 +89,8 @@
                   <div class="card-header">
                     <h4 class="card-title">Data Sampah</h4>
                    </div>
-                    <div class="card-body table-responsive">
-                      <table class="table"> 
+                    <div class="card-body table-responsive ">
+                      <table class="table data-tables"> 
                         <thead>
                           <tr>
                             <th scope="col">No </th>
@@ -114,20 +114,20 @@
                         <td>{{$item->harga}}</td>
                         <td>{{$item->keterangan}}</td>
                         <td>
-                        <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
+                        <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-check"></i></a>
                              
                             </div>
                         </td>
                         <td>
                             <div class="ml-auto">
                               <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                              <a href="{{ url('delete-sampah',$item->id_sampah) }}" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                              <a href="{{ url('delete-sampah',$item->id_sampah) }}" onclick="return confirm('yakin?')" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
                             </div>
                          </td>
                       </tr>
                           @endforeach
                   </table>
-                  <div class="pull-left">
+                  <!-- <div class="pull-left">
                         Showing
                         {{ $data->firstItem() }}
                         to
@@ -138,7 +138,7 @@
                     </div>
                     <div class="pull-right">
                         {{ $data->links() }}
-                    </div>
+                    </div> -->
 
                             </div>
                 </div>

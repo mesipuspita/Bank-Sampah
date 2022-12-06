@@ -53,7 +53,7 @@
 							<span class="nav-text">Laporan</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="{{ url('laporan')}}">Laporan Bulanan</a></li>
+							<li><a href="{{ url('cetak-detail')}}">Laporan Bulanan</a></li>
 						</ul>
                         <ul aria-expanded="false">
 							<li><a href="{{ route('cetak-warga')}}" target="_blank" > Cetak Data Warga</a></li>
@@ -64,9 +64,7 @@
                         <ul aria-expanded="false">
 							<li><a href="{{ url('laporan')}}">Cetak Data Sampah</a></li>
 						</ul>
-                        <ul aria-expanded="false">
-							<li><a href="{{ url('laporan')}}">Cetak Nomor KK</a></li>
-						</ul>
+                       
 						<ul aria-expanded="false">
 							<li><a href="{{ url('cetak-detail')}}" target="_blank">Cetak Detail</a></li>
 						</ul>

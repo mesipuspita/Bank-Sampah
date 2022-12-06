@@ -8,3 +8,4 @@
     <link href="{{asset('asset/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}" rel="stylesheet')}}">
 	<link href="{{asset('asset/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet">
     <link href="{{asset('asset/css/style.css')}}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.css"/>

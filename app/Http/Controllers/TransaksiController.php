@@ -19,7 +19,7 @@ class TransaksiController extends Controller
     public function edit($id_transaksi)
     {
         $trans = Transaksi::findorfail($id_transaksi);
-        return view('Transaksi.cetak-warga',compact('trans'));
+        return view('Transaksi.edit',compact('trans'));
     }
 
     public function update(Request $request, $id_transaksi)
@@ -51,6 +51,7 @@ class TransaksiController extends Controller
            
             'nama_warga'        => 'required',
             'tgltransaksi'      => 'required',
+            'total_jumlah'      => 'required',
          ]);
         
         $transaksi = new Transaksi;
@@ -65,6 +66,7 @@ class TransaksiController extends Controller
     {
         $data['transaksi'] = DB::table('transaksi')->whereId($id_transaksi)->first();
         $data['data'] = DB::table('sampah')->get();
+        $data['datas'] = DB::table('detail_transaksi')->get();
         return view('transaksi.add-sampah',$data);
     }
     public function storee(Request $request, $id_transaksi)

@@ -20,3 +20,11 @@
 	<script src="{{asset('asset/js/deznav-init.js')}}"></script>
 	<script src="{{asset('asset/js/demo.js')}}"></script>
     <script src="{{asset('asset/js/styleSwitcher.js')}}"></script>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
+	
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('.data-tables').DataTable();
+		});
+	</script>

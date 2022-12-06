@@ -1,9 +1,11 @@
 @extends('master')
 @section('content')
     <div class="row">
+    <div class="col-lg-12">
+    <div class="card">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Edit Biodata</h2>
+                <h2>Edit Status Transaksi</h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-primary" href="{{ route('transaksi.index') }}"> Kembali</a>
@@ -25,6 +27,8 @@
     <form action="{{url('update',$trans->id_transaksi)}}" method="POST">
         @csrf
          <div class="row">
+         <div class="col-lg-12">
+    <div class="card">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Status:</strong>
@@ -33,6 +37,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">EDIT</button>
+                <button type="submit"  href="{{ route('transaksi.index') }}" class="btn btn-primary">kembali</button>
             </div>
         </div>
    

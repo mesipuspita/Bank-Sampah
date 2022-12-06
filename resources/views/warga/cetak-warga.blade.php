@@ -2,56 +2,61 @@
 <!DOCTYPE html>
 <html lang="end">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="with=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="csrf-token" content="{{csrf_token()}}">
-        <style>
-            table.static{
-                position: relative;
-                border: 1px solid #543535;
-            }
-        </style>
-        <title> CETAK </title>
+        <title>Bikin Kop Surat</title>
     </head>
     <body>
-        <div class="form-group">
-          <p align="center"><b>DATA WARGA BANK SAMPAH</b></p>
-          <!-- <center><h1>BANK SAMPAH<h1></center> -->
-             <table class="static" align="center" rules="all" border="1px" style="width: 95%">
-            
+        <table width="100%">
+            <tr>
+                <td width="30" align="center"><img src="/asset/image/LogoT.png" width="100%"></td>
+                <td width="50" align="center"><h2>BANK SAMPAH PRUMANAS JAMBAK PERMAI </h2>
+                                        <h4>DINAS KEBERSIHAN DAN RUANG TERBUKA HIJAU</h4> 
+                                        <h5>JL. Padang Bukittinggi Telp.(0231) 123456 Cirebon 45141</h5></td>
+            </tr>
+        </table>
+        <font face="Arial" color="black" size="3">Yth : Kepada Bidang Bank Jambak Permai </font><br>
+        <font face="Arial" color="black" size="3">Hal : Data Anggota Bank Sampah Jambak Permai </font>
+    </body>
+    <body>
+      <div class="form-group">
+        <p><b>Tabel berikut berisi data anggota bank sampah jambak permai </b></p>
+           <table class="static" align="center" rules="all" border="1px" style="width: 95%">
                 <tr>
                     <th> NO</th>
-                    <th> No KK </th>
                     <th> NIK</th>
                     <th> Nama</th>
-                    <th >Gender</th>
                     <th >Tanggal Lahir</th>
                     <th >NO Telepon</th>
-                    <th >Agama</th>
-                    <th >Pendidikan</th>
                     <th >Pekerjaan</th>
                     <th >Alamat</th>
                 </tr>
                 @foreach($cetakdata as $item)
                  <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$item->nokk}}</td>
                     <td>{{$item->nik}}</td>
                     <td>{{$item->nama_warga}}</td>
-                    <td>{{$item->gender}}</td>
                     <td>{{$item->tgllahir}}</td>
                     <td>{{$item->notelepon}}</td>
-                    <td>{{$item->agama}}</td>
-                    <td>{{$item->pendidikan}}</td>
                     <td>{{$item->pekerjaan}}</td>
                      <td>{{$item->statustinggal}}</td>
                 </tr>
                     @endforeach
              </table>
         </div>
-        <script type="text/javascript">
-            window.print();
-            </script>
-    </body>
+        <p align="center"><font face="Arial">
+        Terimakasih atas partisipasi anda terhadap bank sampah jambak permai, laporan ini merupakan bukti yang sah data anggota 
+        pada kantor bank sampah jambak permai.</font></p><br>
+
+        <table class="static" align="right" rules="all" border="0px" >
+            <tr>
+                <td>Kepala Bank sampah</td>
+            </tr>
+            <br>
+      <script type="text/javascript">
+          window.print();
+          </script>
+  </body>
 </html>
+
+    
+
+  

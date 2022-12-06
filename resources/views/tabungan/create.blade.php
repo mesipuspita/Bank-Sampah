@@ -38,7 +38,7 @@
                                     </div>
                                     <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                         <label>Total Tabungan</label>
-                                        <input class="form-control" id="text_total_tabungan"  placeholder="Rp." name="total_tabungan" readonly>
+                                        <input class="form-control" id="text_total_tabungan"  placeholder="Rp." name="total_jumlah" readonly>
                                     </div>
                                     <div class="col-xl-3 col-xxl-6 col-md-6">
                                         <label>Jumlah Tarik</label>
@@ -74,7 +74,7 @@
                     var berat = document.getElementById("text_berat").value;
                 }
                 function hitungTotal(selectOS){
-                    var berat = selectOS.value;
+                    var totaltabungan = selectOS.value;
                     var harga = $("#jenis_sampah").find(':selected').attr('data-harga');
                     var total = berat * harga ;
                     document.getElementById("text_total").value = total; 

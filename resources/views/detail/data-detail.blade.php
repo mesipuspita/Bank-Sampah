@@ -22,7 +22,7 @@
                         <thead>
                           <tr>
                           <th scope="col">NO</th>
-                          <th scope="col">Warga</th>
+                          <th scope="col">Nama Warga</th>
                            <th scope="col">Jenis Sampah</th>
                             <th scope="col">Satuan</th>
                             <th scope="col">Jumlah Kg</th>

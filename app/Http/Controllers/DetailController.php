@@ -72,7 +72,7 @@ class DetailController extends Controller
                 'id_warga'=>$request->id_warga,
                 'id_transaksi'=>$request->id_transaksi,
                 'id_satuan'=>$request->id_satuan,
-                'jenis_sampah'=>$request->jenis_sampah,
+                'id_sampah'=>$request->id_sampah,
                 'total'=>$request->total,
                 'harga'=>$request->harga,
                 'total_jumlah'=>$request->total_jumlah,
@@ -84,7 +84,7 @@ class DetailController extends Controller
                 'id_warga'=>$request->id_warga,
                 'id_transaksi'=>$request->id_transaksi,
                 'id_satuan'=>$request->id_satuan,
-                'jenis_sampah'=>$request->jenis_sampah,
+                'id_sampah'=>$request->id_sampah,
                 'total'=>$request->total,
                 'harga'=>$request->harga,
                 'total_jumlah'=>$request->total_jumlah

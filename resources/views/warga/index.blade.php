@@ -15,7 +15,7 @@
                   <h4 class="card-title">Table Kelola Data Anggota</h4>
                 </div>
                     <div class="card-body table-responsive">
-                      <table class="table">
+                      <table class="table data-tables">
                         <thead>
                           <tr>
                           <th scope="col">No</th>
