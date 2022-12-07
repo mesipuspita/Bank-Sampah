@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>LOGIN YGY</title>
+    <title>Halaman Login</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <link href="{{asset('asset/css/style.css')}}" rel="stylesheet">
@@ -25,8 +25,8 @@
                                 <div class="auth-form">
                                 
                                     <center>
-                                        <h3 class="text-center mb-4">Welcome To </h3>
-                                            <img src="{{asset('asset/image/y.png') }}" style="" width="300" height="300" alt="" title="">
+                                        <!-- <h3 class="text-center mb-4">Welcome To </h3> -->
+                                            <img src="{{asset('asset/image/LogoT.png') }}" style="" width="400" height="400" alt="" title="">
                                             @if ($message = Session::get('success'))
                                         <div class="alert alert-success alert-block">
                                             <button type="button" class="close" data-dismiss="alert">×</button>    

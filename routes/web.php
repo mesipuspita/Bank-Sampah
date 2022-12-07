@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('master');
+    return view('public.masterpublic');
 });
 
+Route::get('/admin', function () {
+    return view('master');
+});
 Route::get('user','UserController@index');
 // 
 Route::resource('dashboard','ControllerDashboard');

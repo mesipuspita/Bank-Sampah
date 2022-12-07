@@ -51,7 +51,7 @@ class TransaksiController extends Controller
            
             'nama_warga'        => 'required',
             'tgltransaksi'      => 'required',
-            'total_jumlah'      => 'required',
+            
          ]);
         
         $transaksi = new Transaksi;

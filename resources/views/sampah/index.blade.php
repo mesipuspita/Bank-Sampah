@@ -12,8 +12,11 @@
                       <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
                     </div>
                       <div class="new-arrival-content text-center mt-3">
-                        <h4>Kerdus/Kertas/Buku</h4>
-                        <span class="price">$761.00</span>
+                        <h4>Kertas</h4>
+                        <span><p>Kerdus/koran/Buku adalah jenis kertas - kertasan yang bisa didaurulang, 
+                          kertas termasuk kedalam daftar yang bisa ditukarkan ke Bank sampah ini, harga untuk penukaran 
+                          sampah menjadi uang untuk kertas ini sudah ditentukan dalam table data sampah dibawah ini.
+                        </p></span>
                       </div>
                       </div>
                     </div>
@@ -28,8 +31,10 @@
                                     </div>
                                     <div class="new-arrival-content text-center mt-3">
                                         <h4>Botol Plastik</h4>
-                                        
-                                        <span class="price">$159.00</span>
+                                        <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
+                                          yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
+                                          utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
+                                        </p></span>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +119,7 @@
                         <td>{{$item->harga}}</td>
                         <td>{{$item->keterangan}}</td>
                         <td>
-                        <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-check"></i></a>
+                        <a href="#"class="btn btn-success btn-sm"> Aktif <i class="fa fa-check"></i></a>
                              
                             </div>
                         </td>

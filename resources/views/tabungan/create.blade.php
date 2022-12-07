@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Maaf</strong> Data yang anda inputkan bermasalah.<br><br>

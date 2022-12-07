@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
 <div class="row">
     <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
 		<div class="widget-stat card bg-danger">
@@ -31,19 +32,27 @@
 		    </div>
 		</div>
     </div>
+    <br>        
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+    @endif
 
-        <div class="row">
-    <div class="col-12">
-         <div class="card">
-             <div class="card-body">
-                <div class="form-validation">
-                    <form class="form-valide" action="#" method="post">
+
+    @include('sweetalert::alert')
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-validation">
+                      <form class="form-valide" action="#" method="post">
                         <div class="row">
-                             <div class="card-header">
-                                 <h4 class="card-title">Data Tabungan</h4>
-                             </div>
-                                <div class="card-body table-responsive">
-                                <table class="table">
+                            <div class="card-header">
+                                <h4 class="card-title">Data Tabungan</h4>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <table class="table data-tables">
                                     <thead>
                                     <tr>
                                         <th scope="col">No</th>
@@ -66,7 +75,6 @@
                                             </td> 
                                          </tr>
                                     @endforeach
-                                    
                                     </tbody>
                                 </table>
                             </div>
