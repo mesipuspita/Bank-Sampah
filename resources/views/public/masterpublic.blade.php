@@ -43,7 +43,7 @@
     <div class="container">
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
-          <h1 class="text-light"><a href="index.html"><span>Bethany</span></a></h1>
+          <h1 class="text-light"><a href="index.html"><span>WastBank</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="asset/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -52,26 +52,9 @@
           <ul>
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="#about">About</a></li>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
             <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
             <li><a class="nav-link scrollto" href="#team">Team</a></li>
-            <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-              <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Drop Down 2</a></li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-              </ul>
-            </li>
             <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <li><a class="getstarted scrollto" href="{{ url('register')}}">Register</a></li>
           </ul>
@@ -86,7 +69,7 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
       <h1>Website Bank Sampah Halaman Resmi Cabang Bismillah</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <h2>Ayo pilah dan tabung sampah kita!!!!</h2>
       <a href="{{ url('login')}}" class="btn-get-started scrollto">Login</a>
     </div>
   </section><!-- End Hero -->
@@ -97,7 +80,7 @@
     <section id="clients" class="clients">
       <div class="container">
 
-        <div class="row">
+        <!-- <div class="row">
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100">
             <img src="asset/public_web/img/clients/client-1.png" class="img-fluid" alt="">
@@ -123,7 +106,7 @@
             <img src="asset/public_web/img/clients/client-6.png" class="img-fluid" alt="">
           </div>
 
-        </div>
+        </div> -->
 
       </div>
     </section><!-- End Clients Section -->
@@ -134,7 +117,7 @@
 
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <h2>Eum ipsam laborum deleniti velitena</h2>
+            <h2>WEBSITE BANK SAMPAH</h2>
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
@@ -251,7 +234,7 @@
       </div>
     </section><!-- End Cta Section -->
 
-    <!-- ======= Services Section ======= -->
+    ======= Services Section ======= -->
     <section id="services" class="services section-bg">
       <div class="container">
 
@@ -301,7 +284,7 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section><!-- End Services Section
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio">

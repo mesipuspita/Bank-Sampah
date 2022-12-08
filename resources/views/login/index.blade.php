@@ -13,12 +13,11 @@
 
 </head>
 
-<body class="h-100">
+<body class="h-100" style="background-color: #191970 !important;>
     <div class="authincation h-100">
         <div class="container h-100">
             <div class="row justify-content-center h-100 align-items-center">
                 <div class="col-md-6">
-                <div style="background-color: #191970 !important;">
                     <div class="authincation-content">
                         <div class="row no-gutters">
                             <div class="col-xl-12">
@@ -26,7 +25,7 @@
                                 
                                     <center>
                                         <!-- <h3 class="text-center mb-4">Welcome To </h3> -->
-                                            <img src="{{asset('asset/image/LogoT.png') }}" style="" width="400" height="400" alt="" title="">
+                                            <img src="{{asset('asset/image/LogoT.png') }}" style="" width="250" height="250" alt="" title="">
                                             @if ($message = Session::get('success'))
                                         <div class="alert alert-success alert-block">
                                             <button type="button" class="close" data-dismiss="alert">×</button>    
@@ -84,7 +83,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
