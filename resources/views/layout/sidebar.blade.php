@@ -12,7 +12,6 @@
 							<span class="nav-text">Dashboard</span>
 					</a>
                     </li>
-
                     <li><a href="{{ url('warga')}}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-settings-2"></i>
 							<span class="nav-text">Kelola Data Warga</span>
@@ -72,11 +71,10 @@
 
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-television"></i>
-							<span class="nav-text">Admin</span>
+							<span class="nav-text">Data Login</span>
 						</a>
                         <ul aria-expanded="false">
-                                    <li><a href="{{ url('user')}}">Petugas</a></li>
-									<li><a href="{{ url('biodata')}}">Admin</a></li>
+                                    <li><a href="{{ url('user')}}">User</a></li>
                                 </ul>
                         </li>
                     </li>

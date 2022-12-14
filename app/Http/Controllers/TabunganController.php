@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Tabungan;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class TabunganController extends Controller
@@ -30,7 +30,7 @@ class TabunganController extends Controller
     {
         $request->validate([
             'total' => 'required',
-            'total_jumlah'   => 'required',  
+            'total_jumlah' => 'required',  
             'nama_warga'   => 'required',  
             'nik'          => 'required', 
         ]);

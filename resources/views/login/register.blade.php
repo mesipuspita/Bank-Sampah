@@ -14,7 +14,7 @@
 
 </head>
 
-<body class="h-100">
+<body class="h-100" style="background-color: #191970 !important;>
     <div class="authincation h-100">
         <div class="container h-100">
             <div class="row justify-content-center h-100 align-items-center">

@@ -46,6 +46,7 @@
                         @endforeach
 
                       </table>
+                      <h4 class="card-title">Jumlah</h4>
                     </div>
             </div>
           </div>
