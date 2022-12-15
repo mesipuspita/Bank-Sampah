@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Warga;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class WargaController extends Controller
 {
@@ -17,6 +17,13 @@ class WargaController extends Controller
         $cetakdata = DB::table('wargas')->get();
         return view('warga.cetak-warga',compact('cetakdata'));
     }
+    public function cardwarga()
+    {
+        $cetakcard = DB::table('wargas')->get();
+        return view('warga.card-warga',compact('cetakcard'));
+    }
+
+    
     
     public function create()
     {

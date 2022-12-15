@@ -30,6 +30,19 @@
        @include('layout.navheader')
        @include('layout.sidebar')
 
+       <div class="content-body">
+        <div class="page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="javascript:void(0)">{{ Request::path() }}</a></li>
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">{{ Request::path() }}</a></li>
+					</ol>
+                </div>
+            <!-- row -->
+			<div class="container-fluid">
+				@yield('content')
+            </div>
+        </div>
+
 		
 		<!--**********************************
             Content body start

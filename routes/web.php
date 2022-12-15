@@ -63,6 +63,7 @@ Route::resource('penduduk','PendudukController');
 // 
 Route::resource('warga','WargaController');
 Route::get('/cetak-warga','WargaController@cetakwarga')->name('cetak-warga');
+Route::get('/card-warga','WargaController@cardwarga')->name('card-warga');
 // 
 Route::resource('datasampah','DataSampahController');
 Route::get('/delete-sampah/{id_sampah}','DataSampahController@destroy')->name('delete-sampah');
@@ -70,6 +71,9 @@ Route::get('/delete-sampah/{id_sampah}','DataSampahController@destroy')->name('d
 Route::resource('pengajuanharga','PengajuanController');
 // 
 Route::resource('tabungan','TabunganController');
+
+
+
 
 Route::get('login','LoginController@index');
 Route::post('login','LoginController@login');
@@ -80,14 +84,13 @@ Route::get('/edit/{id}','TransaksiController@edit')->name('edit');
 //
 Route::post('/update/{id}','TransaksiController@update')->name('update');
 //
-
-
-
 Route::resource('detail','DetailController');
 
 Route::get('/data-detail/{id_warga}/{id_transaksi}','DetailController@index')->name('data-detail');
 Route::get('/create-detail/{id_warga}/{id_transaksi}','DetailController@create')->name('create-detail');
 Route::post('/simpan-detail','DetailController@store')->name('simpan-detail');
+
+
 Route::get('edit-detail','DetailController@edit')->name('edit-detail');
 Route::get('/delete-detail/{id_detail}','DetailController@destroy')->name('delete-detail');
 

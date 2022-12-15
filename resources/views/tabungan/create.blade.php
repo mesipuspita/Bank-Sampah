@@ -34,22 +34,24 @@
                                     <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                         <label>NIK</label>
                                         <input type="text" class="form-control"  id="text_nik" name="nik" placeholder="Enter a username.." readonly>
+                                    </div>                                 
+                                    <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
+                                        <p class="mb-1">Jumlah Tarik</p>
+                                        <input type="number"  id="text_tarik" name="tarik"  onchange="hitungTotal(this)" class="form-control input-btn input-number" value="10">  
                                     </div>
+
                                     <div class="col-xl-3 col-xxl-6 col-md-6 mb-3">
                                         <label>Total Tabungan</label>
                                         <input class="form-control" id="text_total_tabungan"  placeholder="Rp." name="total_jumlah" readonly>
                                     </div>
-                                    <div class="col-xl-3 col-xxl-6 col-md-6">
-                                        <label>Jumlah Tarik</label>
-                                        <input type="text" class="form-control"  onchange="hitungTotal(this)" name="total_tarik" placeholder="Rp." >
-                                    </div>
+                                    
                                     <div class="col-xl-4">
-                                    <div class="card">
-                                        <div class="card-header"> 
-                                            <label class="card-title"><h5>Sisa Tabungan</h5></label>
-                                            <input name="text" id="text_sisa" class="form-control"  name="sisa" placeholder=" Rp."readonly>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Sisa</h4>
+                                                <input  id="text_sisa" class="form-control"  name="sisa" readonly>
+                                            </div>
                                         </div>
-                                    </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                                      <button type="submit" class="btn btn-danger"> <i class='fa fa-arrow-left'></i></button>
@@ -71,16 +73,16 @@
 
                     var totaltabungan = $("#nama_warga"). find(':selected').attr('data-nik');
                     document.getElementById("text_total_tabungan").value = totaltabungan;  
+
                     
-                    var berat = document.getElementById("text_berat").value;
+                    var tarik = document.getElementById("text_tarik").value;
                 }
                 function hitungTotal(selectOS){
-                    var totaltabungan = selectOS.value;
-                    var harga = $("#jenis_sampah").find(':selected').attr('data-harga');
-                    var total = berat * harga ;
-                    document.getElementById("text_total").value = total; 
-                 }
-                
+                    var tarik = selectOS.value;
+                    var totaltabungan = $("#nama_warga"). find(':selected').attr('data-nik');
+                    var sisa = totaltabungan - tarik ;
+                    document.getElementById("text_sisa").value = sisa; 
+                }
         
             </script>
             

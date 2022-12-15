@@ -1,12 +1,20 @@
 <?php
 namespace App\Http\Controllers;
 use App\Tabungan;
+use App\Detail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class TabunganController extends Controller
 {
     public function index()
+    {
+        $data = DB::table('detail_transaksi')
+        ->leftJoin('wargas','detail_transaksi.id_detail','=','wargas.id_warga')
+        ->get();
+        return view('tabungan.index',compact('data'));
+    }
+    public function simpan()
     {
         $data = DB::table('detail_transaksi')
         ->leftJoin('wargas','detail_transaksi.id_detail','=','wargas.id_warga')
@@ -29,12 +37,22 @@ class TabunganController extends Controller
     public function store(Request $request )
     {
         $request->validate([
-            'total' => 'required',
+            'total'        => 'required',
             'total_jumlah' => 'required',  
             'nama_warga'   => 'required',  
             'nik'          => 'required', 
         ]);
-        tabungan::create($request->all());
+        
+        $data = Detail :: create([
+            'id_warga'=>$request->id_warga,
+            'id_transaksi'=>$request->id_transaksi,
+            'id_satuan'=>$request->id_satuan,
+            'id_sampah'=>$request->id_sampah,
+            'total'=>$request->total,
+            'harga'=>$request->harga,
+            'total_jumlah'=>$request->total_jumlah,
+            'gambar'=>$request->file('gambar')->getClientOriginalName()
+        ]);
         return redirect()->route('tabungan.index')->with('success','Data berhasil di input');
     }
     public function show($id)

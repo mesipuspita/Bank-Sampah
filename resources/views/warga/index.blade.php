@@ -47,7 +47,7 @@
                             <td>{{$item->pekerjaan}}</td>
                             <td>{{$item->statustinggal}}</td>
                             <td>
-                            <a href="#"><i class="fa fa-id-card" aria-hidden="true"></i></a>
+                            <a href="{{ route('card-warga')}}"><i class="fa fa-id-card" aria-hidden="true"></i></a>
                             </td>
                            
                           </tr>

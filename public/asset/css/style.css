@@ -37048,9 +37048,9 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   background: #fff;
   padding: 20px 40px;
   margin-bottom: 40px;
-  margin-left: -40px;
+  margin-left: 10px;
   margin-right: -40px;
-  margin-top: -40px;
+  margin-top: 10px;
   border-bottom: 1px solid #f4f4f4; }
   [data-theme-version="dark"] .page-titles {
     background: #1b1b1b;

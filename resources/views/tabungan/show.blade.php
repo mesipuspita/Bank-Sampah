@@ -8,13 +8,12 @@
                       <table class="table"> 
                         <thead>
                           <tr>
-                            <th scope="col">Kategori Sampah</th>
-                            <th scope="col">Satuan</th>
-                            <th scope="col">harga</th>
+                            <th scope="col">Nama Warga/th>
+                            <th scope="col">Total Tarik</th>
+                            <th scope="col">Sisa Tabungan</th>
                             <th scope="col">Deskripsi</th>
                             <th scope="col">Status</th>
                             <th scope="col">Aksi</th>
-                            <!-- <th scope="col">Id Satuan</th>          -->
                           </tr>
                         </thead>
                     <tbody>

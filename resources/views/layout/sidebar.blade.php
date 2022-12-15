@@ -78,6 +78,19 @@
                                 </ul>
                         </li>
                     </li>
+
+					</li>
+
+                        <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="flaticon-381-television"></i>
+							<span class="nav-text">QR CODE</span>
+						</a>
+                        <ul aria-expanded="false">
+                                    <li><a href="{{ url('user')}}">Kategori Sampah</a></li>
+                                </ul>
+                        </li>
+                    </li>
+					
                 </ul>
 				<div class="copyright">
                 <center><p>BANKSAM<br/>Desa Tandikat Kecamatan Patamuan</p></center>

@@ -31,7 +31,9 @@
                         
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                Dashboard
+                                
+
+                                <li class="breadcrumb-item">{{ Request::path() }}</li>
                             </div>
                         </div>
 

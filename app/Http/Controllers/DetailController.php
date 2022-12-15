@@ -2,7 +2,7 @@
 namespace App\Http\Controllers;
 use App\Detail;
 use App\Transaksi;
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 
@@ -90,9 +90,6 @@ class DetailController extends Controller
                 'total_jumlah'=>$request->total_jumlah
             ]);
         }
-
-
-         
         if($request->hasFile('gambar')){
             $request->file('gambar')->move('gambardetail/',$request->file('gambar')->getClientOriginalName());
             $data->gambar=$request->file('gambar')->getClientOriginalName();

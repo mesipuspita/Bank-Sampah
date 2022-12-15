@@ -38,8 +38,6 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
-
     @include('sweetalert::alert')
     <div class="row">
         <div class="col-12">
@@ -70,8 +68,8 @@
                                             <td>{{$item->nik}}</td>
                                             <td>{{$item->total_jumlah}}</td> 
                                             <td>
-                                                <a href="{{route('tabungan.create',$item->id_detail)}}"  class="btn btn-danger sharp mr-6"><i class='fa fa-money'></i></a> 
-                                                <a href="{{route('tabungan.create',$item->id_detail)}}"  class="btn btn-danger sharp mr-6"><i class="fa fa-eye"></i></a>   
+                                                <a href="{{route('tabungan.create')}}" class="btn btn-danger sharp mr-6"><i class='fa fa-money'></i></a> 
+                                                <a href="#"  class="btn btn-danger sharp mr-6"><i class="fa fa-eye"></i></a>   
                                             </td> 
                                          </tr>
                                     @endforeach
