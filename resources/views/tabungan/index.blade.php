@@ -69,7 +69,7 @@
                                             <td>{{$item->total_jumlah}}</td> 
                                             <td>
                                                 <a href="{{route('tabungan.create')}}" class="btn btn-danger sharp mr-6"><i class='fa fa-money'></i></a> 
-                                                <a href="#"  class="btn btn-danger sharp mr-6"><i class="fa fa-eye"></i></a>   
+                                                <a href="{{ route('detail-tarik')}}"class="btn btn-danger sharp mr-6"><i class="fa fa-eye"></i></a>   
                                             </td> 
                                          </tr>
                                     @endforeach

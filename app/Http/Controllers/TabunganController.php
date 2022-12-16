@@ -14,12 +14,21 @@ class TabunganController extends Controller
         ->get();
         return view('tabungan.index',compact('data'));
     }
-    public function simpan()
+    public function detailtarik()
     {
         $data = DB::table('detail_transaksi')
+        ->leftJoin('penarikan','detail_transaksi.id_detail','=','penarikan.id_penarikan')
         ->leftJoin('wargas','detail_transaksi.id_detail','=','wargas.id_warga')
         ->get();
-        return view('tabungan.index',compact('data'));
+        return view('tabungan.tabungan-detail',compact('data'));
+    }
+    public function invoice()
+    {
+        $data = DB::table('detail_transaksi')
+        ->leftJoin('penarikan','detail_transaksi.id_detail','=','penarikan.id_penarikan')
+        ->leftJoin('wargas','detail_transaksi.id_detail','=','wargas.id_warga')
+        ->get();
+        return view('tabungan.invoice',compact('data'));
     }
     public function create()
     {

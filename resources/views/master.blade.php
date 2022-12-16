@@ -44,22 +44,22 @@
         </div>
 
 		
-		<!--**********************************
-            Content body start
-        ***********************************-->
+		**********************************
+            {{-- Content body start
+        ***********************************
         <div class="content-body">
             <!-- row -->
 			<div class="container-fluid">
             @yield('content')
             
-            
+            Haiiiii
                   
 						<i class="fas fa-user-check fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
 
             <!-- Earnings (Monthly) Card Example
             <div class="col-xl-3 col-md-6 mb-4">

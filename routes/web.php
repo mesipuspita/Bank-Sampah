@@ -64,6 +64,11 @@ Route::resource('penduduk','PendudukController');
 Route::resource('warga','WargaController');
 Route::get('/cetak-warga','WargaController@cetakwarga')->name('cetak-warga');
 Route::get('/card-warga','WargaController@cardwarga')->name('card-warga');
+//
+Route::get('/detail-tarik','TabunganController@detailtarik')->name('detail-tarik');
+//
+Route::get('/invoice','TabunganController@invoice')->name('invoice');
+
 // 
 Route::resource('datasampah','DataSampahController');
 Route::get('/delete-sampah/{id_sampah}','DataSampahController@destroy')->name('delete-sampah');
