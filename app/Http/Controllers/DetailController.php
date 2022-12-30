@@ -13,7 +13,7 @@ class DetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id_detail)
     {
         $dtdetail = DB::table('detail_transaksi')
         ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')

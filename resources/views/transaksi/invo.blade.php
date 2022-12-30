@@ -2,7 +2,8 @@
 @section('content')
         <div class="row">
             <div class="col-lg-12">
-
+                <form action="{{ route('transaksi.invoice') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                 <div class="card mt-3">
                     <div class="card-header"> Invoice <strong>01/01/01/2018</strong> <span class="float-right">
                         <strong>Status:</strong> yes</span> 
@@ -17,6 +18,7 @@
                                 <div>Email: info@webz.com.pl</div>
                                 <div>Phone: +48 444 666 3333</div>
                             </div>
+                            333333333333333333333333333333333
                             <div class="col-xl-3 col-sm-6 mt-4">
                                 <h6>To:</h6>
                                 <div> <strong>Bob Mart</strong> </div>
@@ -28,15 +30,15 @@
                             <div class="mt-4 col-xl-6 col-lg-12 col-md-12 col-sm-12 d-flex justify-content-lg-start justify-content-md-center justify-content-xs-start">
                                 <div class="row align-items-center">
                                     <div class="col-sm-9"> 
-                                        {{-- <div class="brand-logo mb-3">
-                                            
-                                            <img class="logo-compact" width="110" src="{{asset('asset/image/LogoT.png')}}" alt="">
-                                        </div> --}}
+                                        <div class="brand-logo mb-3">
+                                            <img class="logo-abbr mr-2" width="50" src="images/logo.png" alt="">
+                                            <img class="logo-compact" width="110" src="images/logo-text.png" alt="">
+                                        </div>
                                         <span>Please send exact amount: <strong class="d-block">0.15050000 BTC</strong>
                                             <strong>1DonateWffyhwAjskoEwXt83pHZxhLTr8H</strong></span><br>
                                         <small class="text-muted">Current exchange rate 1BTC = $6590 USD</small>
                                     </div>
-                                    <div class="col-sm-3 mt-3" width="200">  <img src="{{asset('asset/image/LogoT.png')}}" class="img-fluid width110"> </div>
+                                    <div class="col-sm-3 mt-3"> <img src="images/qr.png" class="img-fluid width110"> </div>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +59,7 @@
                                         <td class="center">1</td>
                                         <td class="left strong">Origin License</td>
                                         <td class="left">Extended License</td>
-                                        <td class="right">123</td>
+                                        <td class="right">$999,00</td>
                                         <td class="center">1</td>
                                         <td class="right">$999,00</td>
                                     </tr>

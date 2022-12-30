@@ -11,7 +11,7 @@
 					</span>
 					<div class="media-body text-white text-right">
 					    <p class="mb-1">Jumlah Nasabah</p>
-					    <h3 class="text-white"></h3>
+					    <h3 class="text-white">{{ $warga }}</h3>
 				    </div>
 			    </div>
 		    </div>
@@ -26,7 +26,7 @@
 					</span>
 					<div class="media-body text-white text-right">
 						<p class="mb-1">Total Tabungan</p>
-						<h3 class="text-white"></h3>
+                        <h3 class="text-white">Rp.{{ $detail}}</h3>
 					</div>
 				</div>
 		    </div>
@@ -41,7 +41,7 @@
 					</span>
 					<div class="media-body text-white text-right">
 						<p class="mb-1">Kategori Sampah</p>
-						<h3 class="text-white">7</h3>
+						<h3 class="text-white">{{ $Sampah }}</h3>
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 						<i class="flaticon-381-user-7"></i>
 					</span>
 				    <div class="media-body text-white text-right">
-				        <p class="mb-1">Total</p>
+				        <p class="mb-1">Total Tarik</p>
 					    <h3 class="text-white">$76</h3>
 				    </div>
 			    </div>

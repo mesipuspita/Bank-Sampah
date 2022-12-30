@@ -2,9 +2,12 @@
 namespace App\Http\Controllers;
 use App\Transaksi;
 use App\Detail;
+use App\Warga;
+use App\Sampah;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
+
 
 class TransaksiController extends Controller
 {
@@ -38,6 +41,7 @@ class TransaksiController extends Controller
         $data['data'] = DB::table('wargas')->get();
         return view('transaksi.create',$data);
     }
+   
     /**
     * Store a newly created resource in storage.
     *
@@ -69,6 +73,25 @@ class TransaksiController extends Controller
         $data['datas'] = DB::table('detail_transaksi')->get();
         return view('transaksi.add-sampah',$data);
     }
+    public function invo(Request $request, $id_transaksi)
+    {
+        
+        $warga = Warga::all();
+        $sampah = Sampah::all();
+        if($request->id_warga){
+            $warga = Warga::find($request->id_warga);
+
+        }
+        if($sampah !=""){
+            $sampah= Sampah::whare('jenis_sampah',$sampah)->get();
+
+        }
+
+        $Sampah = Sampah::count();
+        $detail = Detail::all()->sum('total_jumlah');
+        return view('informasi.index', compact('warga','Sampah','detail'));
+    }
+    
     public function storee(Request $request, $id_transaksi)
     {
          $request->validate([

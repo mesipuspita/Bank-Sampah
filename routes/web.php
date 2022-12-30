@@ -40,6 +40,8 @@ Route::get('tambah-sampah/{id_transaksi}','TransaksiController@tambahSampah')->n
 Route::get('transaksi/bukti/{id_transaksi}', 'TransaksiController@bukti')->name('transaksi.bukti');
 Route::post('transaksi/storee/{id_transaksi}','TransaksiController@storee')->name('transaksi.storee');
 
+Route::get('transaksi/invo','TransaksiController@invo')->name('invo');
+
 
 
 Route::get('/delete-transaksi/{id}','TransaksiController@destroy')->name('delete-transaksi');
@@ -67,7 +69,8 @@ Route::get('/card-warga','WargaController@cardwarga')->name('card-warga');
 //
 Route::get('/detail-tarik','TabunganController@detailtarik')->name('detail-tarik');
 //
-Route::get('/invoice','TabunganController@invoice')->name('invoice');
+Route::get('/invoice','TabunganController@invoice')->name('invoice
+');
 
 // 
 Route::resource('datasampah','DataSampahController');

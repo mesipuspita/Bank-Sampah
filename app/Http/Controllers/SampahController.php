@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Sampah;
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 class SampahController extends Controller
 {

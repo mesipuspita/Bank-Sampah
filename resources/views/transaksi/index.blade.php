@@ -60,6 +60,9 @@
                                                     <a href="{{ url('create-detail',[$item->id_warga, $item->id_transaksi])}}"class="btn btn-info btn-xs sharp mr-1"><i class="fa fa-plus"></i></a>
                                                     <a href="{{ url('data-detail',[$item->id_warga, $item->id_transaksi])}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
                                                     <a href="{{ url('delete-transaksi',$item->id_transaksi) }}"onclick="return confirm('yakin?')" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                    
+                                                    <a href="{{ url('invo')}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
+                                                    
                                                 </td>
                                             </tr>
                                         @endforeach
