@@ -9,15 +9,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
+
 class TransaksiController extends Controller
 {
-
+    
     public function index()
     {
+        $title = 'Transaksi';
         $data = DB::table('transaksi')
         ->leftJoin('wargas','transaksi.user_id','=','wargas.id_warga')
         ->paginate(5);
-        return view('transaksi.index',compact('data'));
+        return view('transaksi.index',compact('data','title'));
     }
     public function edit($id_transaksi)
     {

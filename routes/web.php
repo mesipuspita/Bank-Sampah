@@ -42,8 +42,6 @@ Route::post('transaksi/storee/{id_transaksi}','TransaksiController@storee')->nam
 
 Route::get('transaksi/invo','TransaksiController@invo')->name('invo');
 
-
-
 Route::get('/delete-transaksi/{id}','TransaksiController@destroy')->name('delete-transaksi');
 //
 Route::post('transaksi/{id}','TransaksiController@storee')->name('transaksi');
@@ -79,10 +77,7 @@ Route::get('/delete-sampah/{id_sampah}','DataSampahController@destroy')->name('d
 Route::resource('pengajuanharga','PengajuanController');
 // 
 Route::resource('tabungan','TabunganController');
-
-
-
-
+//
 Route::get('login','LoginController@index');
 Route::post('login','LoginController@login');
 Route::post('simpanregister','LoginController@simpanregister')->name('simpanregister');
@@ -109,5 +104,14 @@ Route::get('/cetak-detail','DetailController@cetakdetail')->name('cetak-detail')
 
 Route::get('/data-penarikan','PenarikanController@index')->name('data-penarikan');
 Route::get('/create-penarikan','PenarikanController@create')->name('create-penarikan');
+
+
+// HALAMAN USER
+Route::get('/transaksiuser','DetailController@transaksiuser')->name('transaksiuser');
+
+Route::get('/datasampahuser','SampahControllerr@user')->name('datasampahuser');
+
+Route::get('/halamanuser', [RegisterController::class, 'sampahuser']);
+
 
 

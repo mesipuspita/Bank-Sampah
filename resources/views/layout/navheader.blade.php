@@ -31,7 +31,8 @@
                         
                         <div class="header-left">
                             <div class="dashboard_bar">
-                                <li class="breadcrumb-item">{{ Request::path() }}</li>
+                                {{ $title }}
+                               
                             </div>
                         </div>
 

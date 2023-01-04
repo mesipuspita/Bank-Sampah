@@ -3,9 +3,6 @@
         ***********************************-->
         <!-- role admin -->
         @if(auth()->user()->roleid == 1)
-		
-
-
         <div class="deznav" style="background-color: #191970 !important;">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
@@ -70,6 +67,10 @@
 						<ul aria-expanded="false">
 							<li><a href="{{ url('cetak-detail')}}" target="_blank">Cetak Detail</a></li>
 						</ul>
+						<ul aria-expanded="false">
+							<li><a href="{{ url('sampahuser')}}" target="_blank">Transaksi User</a></li>
+						</ul>
+						
 					</li>
 
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -82,7 +83,7 @@
                         </li>
                     </li>
 
-					</li>
+					{{-- </li>
 
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 						<i class="flaticon-381-television"></i>
@@ -92,7 +93,7 @@
                                     <li><a href="{{ url('user')}}">Kategori Sampah</a></li>
                                 </ul>
                         </li>
-                    </li>
+                    </li> --}}
 					
                 </ul>
 				<div class="copyright">
