@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use App\Detail;
+use App\Sampah;
 use App\Transaksi;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\Paginator;
@@ -8,12 +9,7 @@ use Illuminate\Http\Request;
 
 class DetailController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index($id_detail)
+    public function index($id_warga,$id_transaksi)
     {
         $dtdetail = DB::table('detail_transaksi')
         ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
@@ -21,50 +17,29 @@ class DetailController extends Controller
         ->leftJoin('wargas','wargas.id_warga','=','detail_transaksi.id_warga')
         ->leftJoin('transaksi','transaksi.id_transaksi','=','detail_transaksi.id_transaksi')
         ->paginate(50);
-        // dd($dtdetail);
+        //dd($dtdetail);
         return view('detail.data-detail', compact('dtdetail'));
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create( )
+    public function create()
     {
+        
         $data['detail_transaksi'] = DB::table('detail_transaksi')->get();
         $data['datawarga'] = DB::table('wargas')->get();
+        $data['datasatuan'] = DB::table('satuan')->get();
         $data['data'] = DB::table('sampah')->get();
        
         return view('detail.create-detail',$data);
-       
         // $data['transaksi'] = DB::table('transaksi')->whereId($id_transaksi)->first();
-    
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
+        
         // dd($id_satuan());
         $request->validate([
-            'jenis_sampah'       =>'required',
-           
-            // 'nama_warga'         =>'required',
-            // 'id_satuan'             =>'required',
-            // 'total'              =>'required',
-            // 'harga'              =>'required',
-            
-
+            'jenis_sampah' =>'required',
+            'id_satuan'       =>'required',
          ]);
-        // dd($request->all());
-
-        //  $data = Detail::create($request->all());
-
-        // dd($request->id_warga);
 
         if($request->hasFile('gambar')){
         
@@ -72,7 +47,7 @@ class DetailController extends Controller
                 'id_warga'=>$request->id_warga,
                 'id_transaksi'=>$request->id_transaksi,
                 'id_satuan'=>$request->id_satuan,
-                'id_sampah'=>$request->id_sampah,
+                'id_sampah'=>$request->jenis_sampah,
                 'total'=>$request->total,
                 'harga'=>$request->harga,
                 'total_jumlah'=>$request->total_jumlah,
@@ -84,7 +59,7 @@ class DetailController extends Controller
                 'id_warga'=>$request->id_warga,
                 'id_transaksi'=>$request->id_transaksi,
                 'id_satuan'=>$request->id_satuan,
-                'id_sampah'=>$request->id_sampah,
+                'id_sampah'=>$request->jenis_sampah,
                 'total'=>$request->total,
                 'harga'=>$request->harga,
                 'total_jumlah'=>$request->total_jumlah
@@ -145,6 +120,7 @@ class DetailController extends Controller
     }
     public function cetakdetail()
     {
+        $title = 'Transaksi';
         $dtcetak = DB::table('detail_transaksi')
         ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
         ->leftJoin('sampah','sampah.id_sampah','=','detail_transaksi.id_sampah')
@@ -152,6 +128,6 @@ class DetailController extends Controller
         ->leftJoin('transaksi','transaksi.id_transaksi','=','detail_transaksi.id_transaksi')
         ->get();
         // dd($dtdetail);
-        return view('detail.cetak-detail', compact('dtcetak'));
+        return view('detail.cetak-detail', compact('dtcetak','title'));
     }
 }

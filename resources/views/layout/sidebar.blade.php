@@ -12,6 +12,12 @@
 							<span class="nav-text">Dashboard</span>
 					</a>
                     </li>
+					<li> <a href="{{url('analisa')}}" aria-expanded="false">
+						<i class="flaticon-381-networking"></i>
+						<span class="nav-text">Analisi Apriori</span>
+				</a>
+				</li>
+
                     <li><a href="{{ url('warga')}}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-settings-2"></i>
 							<span class="nav-text">Kelola Data Warga</span>
@@ -55,20 +61,20 @@
 							<li><a href="{{ url('cetak-detail')}}">Laporan Bulanan</a></li>
 						</ul>
                         <ul aria-expanded="false">
-							<li><a href="{{ route('cetak-warga')}}" target="_blank" > Cetak Data Warga</a></li>
+							<li><a href="{{ url('/data-warga-pdf')}}" target="_blank" >Laporan Data Warga</a></li>
 						</ul>
 						<ul aria-expanded="false">
-							<li><a href="{{ url('cetak-transaksi')}}">Cetak transaksi/Tanggal</a></li>
+							<li><a href="{{ url('cetak-transaksi')}}">Laporan transaksi/Tanggal</a></li>
 						</ul>
                         <ul aria-expanded="false">
-							<li><a href="{{ url('laporan')}}">Cetak Data Sampah</a></li>
+							<li><a href="{{ url('/data-sampah-pdf')}}" target="_blank" >Laporan Data Sampah</a></li>
 						</ul>
                        
 						<ul aria-expanded="false">
-							<li><a href="{{ url('cetak-detail')}}" target="_blank">Cetak Detail</a></li>
+							<li><a href="{{ url('cetak-detail')}}" target="_blank">Laporan Detail</a></li>
 						</ul>
 						<ul aria-expanded="false">
-							<li><a href="{{ url('sampahuser')}}" target="_blank">Transaksi User</a></li>
+							<li><a href="{{ url('sampahuser')}}" target="_blank"> Transaksi User</a></li>
 						</ul>
 						
 					</li>
@@ -82,7 +88,7 @@
                                 </ul>
                         </li>
                     </li>
-
+					{{-- <div <a href="#" class="d-block">{{auth()->user()->name }}</a> </div> --}}
 					{{-- </li>
 
                         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
@@ -127,7 +133,7 @@
 							<span class="nav-text">Transaksi</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="{{ url('transaksi')}}">Transaksi Stor</a></li>
+							<li><a href="{{ url('usertransaksi')}}">Transaksi Stor</a></li>
 						</ul>
                     </li>	
                     <li><a href="{{ url('tabungan')}}" class="ai-icon" aria-expanded="false">

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Sampah;
+use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 
 class SampahController extends Controller
 {
@@ -18,6 +20,7 @@ class SampahController extends Controller
     
     public function create()
     {
+    
         return view('sampah.create');
     }
     /**
@@ -43,6 +46,11 @@ class SampahController extends Controller
         $sampah->findorfail($id)->delete();
         return redirect()->route('sampah.index')->with('info','sampah berhasil dihapus');
     }
+    public function show(Sampah $sampah,$id)
+    {
+        $data = $sampah->find($id);
+        return view('sampah.show',compact('data'));
+    }
 
     public function edit(Sampah $sampah)
     {
@@ -65,5 +73,12 @@ class SampahController extends Controller
     
         $sampah->save();
         return redirect()->route('sampah.index')->with('success','sampah berhasil di update');
+    }
+    public function downloadpdf()
+    {
+        $data = DB::table('sampah')->get();
+        $pdf = FacadePdf::loadView('sampah-pdf',compact('data'));
+        $pdf->setPaper('A4','pandcape');
+        return $pdf->stream('sampah.download.pdf');
     }
 }

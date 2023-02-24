@@ -12,10 +12,11 @@
         </div>
     @endif
 
-    <form action="{{ route('simpan-detail') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('simpandata') }}" method="POST" enctype="multipart/form-data">
          @csrf
         <input type="hidden" name="id_warga" value="{{Request()->id_warga}}">
         <input type="hidden" name="id_transaksi" value="{{Request()->id_transaksi}}">
+        <input type="hidden" name="id_sampah" value="{{Request()->id_sampah}}">
         <input type="hidden" name="id_satuan" value="{{Request()->id_satuan}}">
     
         <div class="row">
@@ -60,9 +61,9 @@
                                     <div class="col-xl-4 mb-3">
                                         <div class="example">
                                             <p class="mb-1">Kategori Sampah</p>
-                                                <select type="text" onchange="detectChange(this)" class="form-control" id="jenis_sampah" name="jenis_sampah" placeholder="Enter a username..">
+                                                <select type="text" onchange="detectChange(this)" class="form-control" id="id_sampah" name="id_sampah" placeholder="Enter a username..">
                                                     @foreach($data as $item)
-                                                        <option value="{{$item->jenis_sampah}}" data-harga="{{$item->harga}}">{{$item->jenis_sampah}}</option>
+                                                        <option value="{{$item->id_sampah}}" data-harga="{{$item->harga}}">{{$item->jenis_sampah}}</option>
                                                     @endforeach
                                                 </select>
                                         </div>
@@ -73,16 +74,16 @@
                                             <input type="number"  id="text_berat" name="total"  onchange="hitungTotal(this)" class="form-control input-btn input-number" value="1">
                                         </div>
                                     </div>
-                                    <div class="col-xl-4">
+                                    {{-- <div class="col-xl-4">
                                         <div class="example">
                                             <p class="mb-1">Satuan/p>
                                                 <select type="text" class="form-control" id="id_satuan" name="id_satuan" placeholder="Enter a username..">
                                                     @foreach($datasatuan as $item)
-                                                        <option value="{{$item->id_satuan}}">{{$item->id_satuan}}</option>
+                                                        <option value="{{$item->id_satuan}}">{{$item->satuan}}</option>
                                                     @endforeach
                                              </select>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-xl-4">
                                         <div class="example">
                                             <p class="mb-1">Harga</p>
@@ -119,7 +120,7 @@
 
     <script>
         function detectChange(selectOS) {
-            var harga = $("#jenis_sampah").find(':selected').attr('data-harga');
+            var harga = $("#id_sampah").find(':selected').attr('data-harga');
             document.getElementById("text_harga").value = harga;
 
             var berat = document.getElementById("text_berat").value;
@@ -129,7 +130,7 @@
 
         function hitungTotal(selectOS){
             var berat = selectOS.value;
-            var harga = $("#jenis_sampah").find(':selected').attr('data-harga');
+            var harga = $("#id_sampah").find(':selected').attr('data-harga');
             var total = berat * harga ;
             document.getElementById("text_total").value = total; 
         }

@@ -43,7 +43,7 @@
     <div class="container">
       <div class="header-container d-flex align-items-center justify-content-between">
         <div class="logo">
-          <h1 class="text-light"><a href="index.html"><span>WastBank</span></a></h1>
+          <h1 class="text-light"><a href="index.html"><span>Bank Sampah</span></a></h1>
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="asset/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
@@ -68,7 +68,7 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-      <h1>Website Bank Sampah Halaman Resmi Cabang Bismillah</h1>
+      <h1> Halaman Resmi Website Bank Sampah</h1>
       <h2>Ayo pilah dan tabung sampah kita!!!!</h2>
       <a href="{{ url('login')}}" class="btn-get-started scrollto">Login</a>
     </div>

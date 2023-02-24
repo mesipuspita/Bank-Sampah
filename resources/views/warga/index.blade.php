@@ -2,12 +2,19 @@
 @section('content')
 
 <div class="container-fluid">
-  <div class="row mb-5 align-items-left">
+  <div class="row mb-3 align-items-left">
 		<div class="col-xl-3 mb-4 mb-xl-0">
 			<a href="{{ route('warga.create')}}" <i class="btn btn-primary light btn-lg btn-block rounded shadow px-2" class="fa fa-print" aria-hidden="true"></i>+Anggota </a>
     </div>
+    {{-- <div class="col-xl-3 mb-4 mb-xl-0">
+			<a href="{{ route('cetak-warga')}}" <i class="btn btn-success light btn-lg btn-block rounded shadow px-2" class="fa fa-print" aria-hidden="true"></i>+Anggota </a>
+    </div> --}}
+  <div class="col-auto">
+    <a href="/data-warga-pdf" target="_blank"class="btn btn-primary">export PDF </a>
   </div>
-  
+</div>
+
+
      <div class="row">
          <div class="col-12">
              <div class="card" >
@@ -59,4 +66,7 @@
             </div>
           </div>
       </div>
+      <div class="pull-left">
+        <a href="{{ route('informasi.index') }}" class="btn btn-primary">Kembali</a>
+    </div>
   @endsection

@@ -11,7 +11,7 @@
     </div>
 @endif
 
-<form action="{{ route('transaksi.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('transaksi.store') }}" method="POST">
 @csrf
 <div class="row">
                     <div class="col-lg-12">

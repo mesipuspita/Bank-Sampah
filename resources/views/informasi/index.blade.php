@@ -11,7 +11,7 @@
 					</span>
 					<div class="media-body text-white text-right">
 					    <p class="mb-1">Jumlah Nasabah</p>
-					    <h3 class="text-white">{{ $warga }}</h3>
+					    <h4 class="text-white" style="">{{ $warga }}</h4>
 				    </div>
 			    </div>
 		    </div>
@@ -19,14 +19,14 @@
     </div>
     <div class="col-xl-3 col-xxl-6 col-lg-6 col-sm-6">
 		<div class="widget-stat card bg-success">
-			<div class="card-body p-4">
+			<div class="card-body p-4"> 
 				<div class="media">
 					<span class="mr-3">
 						<i class="flaticon-381-diamond"></i>
 					</span>
 					<div class="media-body text-white text-right">
-						<p class="mb-1">Total Tabungan</p>
-                        <h3 class="text-white">Rp.{{ $detail}}</h3>
+						<p class="mb-1" style="center">Total Tabungan</p>
+                        <h4 class="text-white">Rp.{{ $detail}}</h5>
 					</div>
 				</div>
 		    </div>
@@ -41,7 +41,7 @@
 					</span>
 					<div class="media-body text-white text-right">
 						<p class="mb-1">Kategori Sampah</p>
-						<h3 class="text-white">{{ $Sampah }}</h3>
+						<h4 class="text-white">{{ $Sampah }}</h4>
 					</div>
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 					</span>
 				    <div class="media-body text-white text-right">
 				        <p class="mb-1">Total Tarik</p>
-					    <h3 class="text-white">$76</h3>
+					    <h4 class="text-white">Rp.{{$tabungan}}</h4>
 				    </div>
 			    </div>
 	        </div>

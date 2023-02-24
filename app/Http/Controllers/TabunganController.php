@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use App\Tabungan;
+use App\Sampah;
+use App\Warga;
 use App\Detail;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -9,10 +11,19 @@ class TabunganController extends Controller
 {
     public function index()
     {
+        $warga = Warga::count();
+        $Sampah = Sampah::count();
+        $detail = Detail::all()->sum('total_jumlah');// menjumlahkan isi field total jumlah dengan id trasaksi 
+
+
         $data = DB::table('detail_transaksi')
-        ->leftJoin('wargas','detail_transaksi.id_detail','=','wargas.id_warga')
-        ->get();
-        return view('tabungan.index',compact('data'));
+        ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
+        ->leftJoin('sampah','sampah.id_sampah','=','detail_transaksi.id_sampah')
+        ->leftJoin('wargas','wargas.id_warga','=','detail_transaksi.id_warga')
+        ->leftJoin('tabungan','tabungan.id_tabungan','=','detail_transaksi.id_tabungan')
+        ->leftJoin('transaksi','transaksi.id_transaksi','=','detail_transaksi.id_transaksi')
+        ->paginate(50);
+        return view('tabungan.index',compact('data','warga','Sampah','detail'));
     }
     public function detailtarik()
     {

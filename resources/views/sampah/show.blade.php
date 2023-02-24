@@ -18,13 +18,31 @@
             
             <div class="form-group">
                 <strong>Nama</strong>
-                {{ $data->nama }}
+                {{ $data->nama_sampah}}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>jenis_sampah</strong>
+                <strong>jenis Sampah</strong>
                 {{ $data->jenis_sampah }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Harga Sampah</strong>
+                {{ $data->harga}}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Keterangan</strong>
+                {{ $data->keterangan}}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Satuan Sampah/Kg</strong>
+                {{ $data->id_satuan}}
             </div>
         </div>
         

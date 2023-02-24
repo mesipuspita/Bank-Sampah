@@ -37,13 +37,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Jenis Sampah</strong>
-                            <select type="text" name="jenis_sampah" class="form-control" placeholder="">
-                            <option value="Alumunium">Alumunium</option>
-                            <option value="Besi">Besi</option>
-                            <option value="Kertas">Kertas</option>
-                            <option value="Botol">Botol</option>
-                            <option value="Lain-lain">Lain-lain</option>
-                            </select>
+                            <input type="text" name="jenis_sampah" class="form-control" placeholder="">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

@@ -1,5 +1,6 @@
 @extends('master')
 @section('content')
+
         <div class="row">
             <div class="col-lg-12">
 
@@ -112,7 +113,14 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <div class="col-lg-12 margin-tb">
+                                    <div class="pull-right">
+                                      <a href="#" class="btn btn-success "><i class="fa fa-print"></i></a>
+                                    </div>
+                                  </div>
                             </div>
+                            
+                          </div>
                         </div>
                     </div>
                 </div>

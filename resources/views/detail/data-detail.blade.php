@@ -1,6 +1,5 @@
 @extends('master')
 @section('content')
-
 @include('sweetalert::alert')
 
 <div class="row mb-5 align-items-center">
@@ -11,6 +10,9 @@
         </div>
       </div>
   </div>
+    @csrf
+   
+   
      <div class="row">
          <div class="col-12">
              <div class="card">
@@ -18,7 +20,7 @@
                   <h4 class="card-title">Detail Transaksi</h4>
                 </div>
                     <div class="card-body table-responsive">
-                      <table class="table">
+                      <table class="table data-tables">
                         <thead>
                           <tr>
                           <th scope="col">NO</th>
@@ -36,7 +38,7 @@
                         <th scope="row">{{ $no+1}}</th>
                             <td>{{$item->nama_warga}}</td>
                             <td>{{$item->jenis_sampah}}</td>
-                            <td>{{$item->satuan}}</td>
+                            <td>{{$item->id_satuan}}</td>
                             <td>{{$item->total}}</td>
                             <td>{{$item->harga}}</td>
                             <td>{{$item->total_jumlah}}</td>

@@ -54,7 +54,6 @@
                                         </div>
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                     <button type="submit" class="btn btn-danger"> <i class='fa fa-arrow-left'></i></button>
                                      <button type="submit" class="btn btn-primary"> <i class='fa fa-handshake-o'></i>Tarik</button>
                                     </div>
                                  
@@ -87,5 +86,8 @@
             </script>
             
         </div>
+    </div>
+    <div class="pull-left">
+        <a href="{{ route('tabungan.index') }}" class="btn">Kembali</a>
     </div>
 @endsection

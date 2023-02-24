@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Warga;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,24 +11,37 @@ class WargaController extends Controller
 {
     public function index()
     {
-        $data = DB::table('wargas')->get();
-        return view('warga.index',compact('data'));
+        
+        $title = 'Data Warga';
+        $data = DB::table('wargas')
+        ->leftJoin('users','users.id','=','wargas.id_warga')->get();
+        return view('warga.index',compact('data','title'));
+    }
+
+    public function exportpdf()
+    {
+        $expo = warga :: all();
+        view()->share('expo',$expo);
+        $pdf = DomPDFPDF::loadview('dataexpo-pdf');
+        return $pdf->download('data.pdf');
+       
     }
     public function cetakwarga()
     {
+        
+        $title = 'Cetak Laporan';
         $cetakdata = DB::table('wargas')->get();
-        return view('warga.cetak-warga',compact('cetakdata'));
+        return view('warga.cetak-warga',compact('cetakdata','title'));
     }
     public function cardwarga()
     {
+        $title = 'Kartu Anggota';
         $cetakcard = DB::table('wargas')->get();
-        return view('warga.card-warga',compact('cetakcard'));
+        return view('warga.card-warga',compact('cetakcard','title'));
     }
-
-    
-    
     public function create()
     {
+        
         return view('warga.create');
     }
     /**
@@ -38,6 +53,7 @@ class WargaController extends Controller
      */
     public function store(Request $request)
     {
+         $title = 'Tambah Data Warga';
         $request->validate([
             'nokk'           => 'required',
             'nik'            => 'required',
@@ -56,7 +72,15 @@ class WargaController extends Controller
     }
     public function destroy(Warga $warga,$idwarga)
     {
+
         $warga->find($idwarga)->delete();
         return redirect()->route('warga.index')->with('success','Data berhasil dihapus');
+    }
+    public function downloadpdf()
+    {
+        $data = DB::table('wargas')->get();
+        $pdf = PDF::loadView('warga-pdf',compact('data'));
+        $pdf->setPaper('A4','Landcape');
+        return $pdf->stream('warga.downloadpdf');
     }
 }

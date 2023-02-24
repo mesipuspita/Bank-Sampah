@@ -7,12 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Warga extends Model
 {
     protected $table ="wargas";
+    protected $primarykey ="id_warga";
     protected $fillable = [
-        'id_warga','nokk',  'nik','statuspengguna','nama_warga' ,'gender' , 'tgllahir','notelepon','agama' ,'pendidikan' , 'pekerjaan','statustinggal' 
+        'id_warga','id','nokk',  'nik','statuspengguna','nama_warga' ,'gender' , 'tgllahir','notelepon','agama' ,'pendidikan' , 'pekerjaan','statustinggal' 
 
     ];
-    public function Detail()
-    {
-        return $this->hasMany(Detail::class);
-    }
+    
 }

@@ -76,6 +76,8 @@
       <div class="col-lg-12 margin-tb">
         <div class="pull-left">
           <a class="btn btn-success" href="{{ route('sampah.create') }}"> Input Data</a>
+          <a href="/data-sampah-pdf" target="_blank"class="btn btn-primary">export PDF </a>
+        
         </div>
       </div>
     </div>
@@ -127,6 +129,8 @@
                             <div class="ml-auto">
                               <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                               <a href="{{ url('delete-sampah',$item->id_sampah) }}" onclick="return confirm('yakin?')" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
+                              <a href="{{ route('show',$item->id_sampah)}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
+                             
                             </div>
                          </td>
                       </tr>
@@ -154,4 +158,7 @@
         </div> 
   </div> 
     
+  <div class="pull-left">
+    <a href="{{ route('informasi.index') }}" class="btn">Kembali</a>
+</div>
 @endsection
