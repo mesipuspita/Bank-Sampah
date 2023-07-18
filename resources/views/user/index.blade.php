@@ -17,6 +17,7 @@
                       <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nama</th>
+                        <th scope="col">Nik</th>
                         <th scope="col">Email</th>
                         <th scope="col">Password</th>
                         
@@ -27,6 +28,7 @@
                       <tr>
                         <th scope="row">{{ $no+1}}</th>
                         <td>{{$item->name}}</td>
+                        <td>{{$item->nik}}</td>
                         <td>{{$item->email}}</td>
                         <td>{{$item->password}}</td>
                         

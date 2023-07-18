@@ -19,7 +19,7 @@
             <a href="index.html" class="brand-logo">
                 <div>
                   <img src="{{asset('asset/image/pp.png')}}" style="right" width="100" height="100" alt="" title="BANK SAMPAH">
-                  <span class="brand-title">Bank Sampah</span>
+                  {{-- <span class="brand-title">Bank Sampah</span> --}}
                   
                 </div> 
             </a> 

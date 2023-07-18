@@ -22,6 +22,7 @@ Route::resource('biodata','BiodataController');
 Route::resource('sampah','SampahController');
 Route::get('/delete-sampah/{id}','SampahController@destroy')->name('delete-sampah');
 Route::get('/show/{id}','SampahController@show')->name('show');
+Route::post('/editstatus/{id}','SampahController@editstatus')->name('editstatus');
 
 Route::resource('datasampah','DataSampahController');
 Route::get('/delete-sampah/{id_sampah}','DataSampahController@destroy')->name('delete-sampah');
@@ -54,7 +55,11 @@ Route::resource('detail','DetailController');
 //Halaman Data Warga
 Route::resource('warga','WargaController');
 Route::get('/cetak-warga','WargaController@cetakwarga')->name('cetak-warga');
+Route::get('/tampilan-warga','WargaController@tampilanwarga')->name('tampilan-warga');
 Route::get('/card-warga','WargaController@cardwarga')->name('card-warga');
+Route::get('/delete-warga/{id}','WargaController@destroy')->name('delete-warga');
+
+
 
 //Halaman Data Tabungan
 Route::resource('tabungan','TabunganController');

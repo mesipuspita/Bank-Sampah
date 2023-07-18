@@ -32,7 +32,7 @@
           <div class="col-md-7 text-md-right">
             
           <a href="#" class="btn btn-success "><i class="fa fa-print"></i></a>
-          <a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
+         
           </div>
         </div>							
       </div>
@@ -62,9 +62,10 @@
                             <th scope="col">Harga/kg</th>
                             <th scope="col">Total Jumlah</th>
                             <th scope="col">Bukti Transaksi</th>
+                            <th scope="col">Aksi/th>
                            
                         </tr>
-                            @foreach($dataanalisa as $no =>$item)
+                            @foreach($dtdetail as $no =>$item)
                         <tr> 
                           <td>
                             <div class="checkbox mr-0 align-self-center">
@@ -73,8 +74,9 @@
                                 <label class="custom-control-label" for="customCheckBox2"></label>
                               </div>
                             </div>
-                          </td>
+                          
                         <th scope="row">{{ $no+1}}</th>
+                          </td>
                             <td>{{$item->nama_warga}}</td>
                             <td>{{$item->jenis_sampah}}</td>
                             {{-- <td>{{$item->satuan}}</td> --}}
@@ -82,7 +84,9 @@
                             <td>{{$item->harga}}</td>
                             <td>{{$item->total_jumlah}}</td>
                             <td><img width=100 height= 100 src="{{asset('gambardetail/')}}/{{$item->gambar}}"/></td>
-                           
+                           <td>
+                            <a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>
+                           </td>
                         </tr>
                         @endforeach
 

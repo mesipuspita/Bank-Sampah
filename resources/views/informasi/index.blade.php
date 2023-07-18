@@ -62,8 +62,9 @@
 	        </div>
 	    </div>
     </div>
+    
     <a href="index.html" class="brand-logo">
-             <img src="{{asset('asset/image/a.jpeg')}}" style="center" width="1400" height="500" alt="" title="">
+             <img src="{{asset('asset/image/bspancadaya.PNG')}}" style="center" width="1400" height="600" alt="" title="">
 		</a>
     <!-- <div class="container-fluid"> -->
 				<!-- <div class="row"> -->
@@ -76,7 +77,82 @@
 							<img src="images/svg/welcom-card.svg" alt="" class="position-absolute">
 						</div>
 					</div>
-
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
+                    
+                              <div class="card">
+                                <div class="card-body">
+                                  <div class="new-arrival-product">
+                                        <div class="new-arrivals-img-contnent">
+                                          <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
+                                        </div>
+                                          <div class="new-arrival-content text-center mt-3">
+                                            <h4>Kertas</h4>
+                                            <span><p>Kerdus/koran/Buku adalah jenis kertas - kertasan yang bisa didaurulang, 
+                                              kertas termasuk kedalam daftar yang bisa ditukarkan ke Bank sampah ini, harga untuk penukaran 
+                                              sampah menjadi uang untuk kertas ini sudah ditentukan dalam table data sampah dibawah ini.
+                                            </p></span>
+                                          </div>
+                                          </div>
+                                        </div>
+                                   </div>
+                                </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="new-arrival-product">
+                                                        <div class="new-arrivals-img-contnent">
+                                                            <img class="img-fluid" src="{{asset('asset/image/Botol Palastik.jpg')}}"alt="">
+                                                        </div>
+                                                        <div class="new-arrival-content text-center mt-3">
+                                                            <h4>Botol Plastik</h4>
+                                                            <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
+                                                              yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
+                                                              utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
+                                                            </p></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="new-arrival-product">
+                                                        <div class="new-arrivals-img-contnent">
+                                                            <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
+                                                        </div>
+                                                        <div class="new-arrival-content text-center mt-3">
+                                                          <h4>Botol Plastik</h4>
+                                                          <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
+                                                            yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
+                                                            utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
+                                                          </p></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="new-arrival-product">
+                                                        <div class="new-arrivals-img-contnent">
+                                                            <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
+                                                        </div>
+                                                        <div class="new-arrival-content text-center mt-3">
+                                                            <h <h4>Botol Plastik</h4>
+                                                              <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
+                                                                yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
+                                                                utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
+                                                              </p></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      </div> 
         <!-- <div class="col-12">
             <div class="card">
                 <div class="card-header">

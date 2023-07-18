@@ -20,6 +20,7 @@ class TransaksiController extends Controller
     public function index()
     {
         $data = DB::table('transaksi')
+        
         ->leftJoin('wargas','transaksi.user_id','=','wargas.id_warga')
         ->paginate(5);
         return view('transaksi.index',compact('data'));
@@ -247,5 +248,13 @@ class TransaksiController extends Controller
         ->paginate(50);
         
         return view('pdf', compact('dtdetail','warga','Sampah','detail','today'));
+    }
+
+    public function downloadpdf()
+    {
+        $data = DB::table('detail_transaksi')->get();
+        $pdf =DomPDFPDF::loadView('warga-pdf',compact('data'));
+        $pdf->setPaper('A4','landscape');
+        return $pdf->stream('warga.downloadpdf');
     }
 }

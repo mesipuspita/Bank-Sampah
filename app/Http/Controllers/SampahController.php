@@ -81,4 +81,23 @@ class SampahController extends Controller
         $pdf->setPaper('A4','pandcape');
         return $pdf->stream('sampah.download.pdf');
     }
+
+    public function editstatus(Sampah $sampah)
+    {
+        return view('sampah.editstatus',compact('sampah'));
+    }
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\sampah $sampah
+     * @return \Illuminate\Http\Response
+     */
+    public function ubah(Request $request,$id)
+    {
+        $sampah =Sampah::findorfail($id);
+        $sampah ->status = $request->status;
+        $sampah->save();
+        return redirect()->route('sampah.index')->with('success','sampah berhasil di update');
+    }
 }

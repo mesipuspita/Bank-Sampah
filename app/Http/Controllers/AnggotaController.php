@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
-class AnalisaController extends Controller
+class AnggotaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +13,7 @@ class AnalisaController extends Controller
      */
     public function index()
     {
-        $dataanalisa= DB::table('detail_transaksi')
-        ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
-        ->leftJoin('sampah','sampah.id_sampah','=','detail_transaksi.id_sampah')
-        ->leftJoin('wargas','wargas.id_warga','=','detail_transaksi.id_warga')
-        ->leftJoin('transaksi','transaksi.id_transaksi','=','detail_transaksi.id_transaksi')
-        ->paginate(50);
-        return view('analisa.index',compact('dataanalisa'));
+        //
     }
 
     /**

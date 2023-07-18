@@ -32,11 +32,8 @@
                                                 <tr>
                                                     <th scope="col">No</th>
                                                     <th scope="col">Nama Warga</th>
-                                                    <th scope="col">Tanggal Transaksi</th>
                                                     <th scope="col">Total Tabungan</th>
                                                     <th scope="col">Status</th> 
-                                                    <!-- <th scope="col">Total</th>
-                                                    <th scope="col">Bukti Transaksi</th> -->
                                                     <th scope="col">Aksi</th>
                                                 </tr>
                                                 </thead>
@@ -45,8 +42,7 @@
                                                 <tr>
                                                 <td>{{$data->firstItem() + $key }}</td>
                                                     <td>{{$item->nama_warga}}</td>
-                                                    <td>{{$item->tgltransaksi}}</td>
-                                                    <td>#</td>
+                                                    <td>Rp</td>
                                                 @if($item->status==1)
                                                     <td> 
                                                     <span class="btn btn-success btn-sm"> Yes </span> 

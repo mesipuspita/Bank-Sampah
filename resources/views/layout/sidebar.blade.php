@@ -12,11 +12,7 @@
 							<span class="nav-text">Dashboard</span>
 					</a>
                     </li>
-					<li> <a href="{{url('analisa')}}" aria-expanded="false">
-						<i class="flaticon-381-networking"></i>
-						<span class="nav-text">Analisi Apriori</span>
-				</a>
-				</li>
+
 
                     <li><a href="{{ url('warga')}}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-settings-2"></i>
@@ -57,24 +53,24 @@
 							<i class="flaticon-381-settings-2"></i>
 							<span class="nav-text">Laporan</span>
 						</a>
-                        <ul aria-expanded="false">
+                        {{-- <ul aria-expanded="false">
 							<li><a href="{{ url('cetak-detail')}}">Laporan Bulanan</a></li>
-						</ul>
+						</ul> --}}
                         <ul aria-expanded="false">
 							<li><a href="{{ url('/data-warga-pdf')}}" target="_blank" >Laporan Data Warga</a></li>
 						</ul>
-						<ul aria-expanded="false">
+						{{-- <ul aria-expanded="false">
 							<li><a href="{{ url('cetak-transaksi')}}">Laporan transaksi/Tanggal</a></li>
-						</ul>
+						</ul> --}}
                         <ul aria-expanded="false">
 							<li><a href="{{ url('/data-sampah-pdf')}}" target="_blank" >Laporan Data Sampah</a></li>
 						</ul>
                        
 						<ul aria-expanded="false">
-							<li><a href="{{ url('cetak-detail')}}" target="_blank">Laporan Detail</a></li>
+							<li><a href="{{ url('cetak-detail')}}" target="_blank">Laporan Detail Transaksi</a></li>
 						</ul>
 						<ul aria-expanded="false">
-							<li><a href="{{ url('sampahuser')}}" target="_blank"> Transaksi User</a></li>
+							<li><a href="{{ url('sampahuser')}}" target="_blank">Laporan Data User</a></li>
 						</ul>
 						
 					</li>

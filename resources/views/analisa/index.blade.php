@@ -93,9 +93,9 @@
                           </div>
                         </div>
                          <tr>
-                                <th scope="col">NO</th>
-                                <th scope="col">ID Transaksi</th>
-                                 <th scope="col">Item Transaksi</th>
+                            <th scope="col">NO</th>
+                            <th scope="col">ID Transaksi</th>
+                            <th scope="col">Item Transaksi</th>
                               </tr>
                               @foreach($dataanalisa as $no =>$item)
                         <tr> 

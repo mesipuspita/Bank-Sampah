@@ -48,8 +48,11 @@
                                         <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
                                     </div>
                                     <div class="new-arrival-content text-center mt-3">
-                                        <h4>Besi</h4>
-                                        <span class="price">$357.00</span>
+                                      <h4>Botol Plastik</h4>
+                                      <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
+                                        yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
+                                        utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
+                                      </p></span>
                                     </div>
                                 </div>
                             </div>
@@ -63,8 +66,11 @@
                                         <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
                                     </div>
                                     <div class="new-arrival-content text-center mt-3">
-                                        <h4>Botol Kaca</h4>
-                                        <span class="price"><select name="harga" id="id"></select></span>
+                                        <h <h4>Botol Plastik</h4>
+                                          <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
+                                            yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
+                                            utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
+                                          </p></span>
                                     </div>
                                 </div>
                             </div>
@@ -120,13 +126,18 @@
                         <td>{{$item->satuan}}</td>
                         <td>{{$item->harga}}</td>
                         <td>{{$item->keterangan}}</td>
-                        <td>
-                        <a href="#"class="btn btn-success btn-sm"> Aktif <i class="fa fa-check"></i></a>
-                             
-                            </div>
+                        @if($item->status==1)
+                        <td> 
+                        <span class="btn btn-success btn-sm"> Yes <i class="fa fa-check"></i></span> 
                         </td>
+                        @else
+                        <td> 
+                            <span class="btn btn-warning btn-sm"> No <i class="fa-solid fa-X"></i></span> 
+                        </td>
+                        @endif 
                         <td>
                             <div class="ml-auto">
+                              <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-warning btn-xs sharp mr-1"><i class="fa fa-book"></i></a>
                               <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                               <a href="{{ url('delete-sampah',$item->id_sampah) }}" onclick="return confirm('yakin?')" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
                               <a href="{{ route('show',$item->id_sampah)}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>

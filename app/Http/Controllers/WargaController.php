@@ -28,10 +28,16 @@ class WargaController extends Controller
     }
     public function cetakwarga()
     {
-        
         $title = 'Cetak Laporan';
         $cetakdata = DB::table('wargas')->get();
         return view('warga.cetak-warga',compact('cetakdata','title'));
+    }
+
+    public function tampilanwarga()
+    {
+        $title ="Tampilan Data Warga";
+        $tampilan = DB::table('sampah')->get();
+        return view('warga.tampilan-warga',compact('tampilan','title'));
     }
     public function cardwarga()
     {
@@ -80,7 +86,16 @@ class WargaController extends Controller
     {
         $data = DB::table('wargas')->get();
         $pdf = PDF::loadView('warga-pdf',compact('data'));
-        $pdf->setPaper('A4','Landcape');
+        $pdf->setPaper('A4','landscape');
         return $pdf->stream('warga.downloadpdf');
     }
+    public function update(Request $request,$id)
+    {
+        $warga =Warga::findorfail($id);
+        $warga ->gender = $request->gender;
+        
+        
+        return redirect()->route('warga.edit')->with('success','sampah berhasil di update');
+    }
+ 
 }
