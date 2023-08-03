@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 //HALAMAN DEPAN
-Route :: group(['middleware' =>['auth']], function(){
+    Route :: group(['middleware' =>['auth']], function(){
     Route::resource('informasi','InfromasiController');
 });
 Route::get('/admin', function () {
@@ -21,9 +21,8 @@ Route::resource('biodata','BiodataController');
 //Halaman Dat Sampah
 Route::resource('sampah','SampahController');
 Route::get('/delete-sampah/{id}','SampahController@destroy')->name('delete-sampah');
-Route::get('/show/{id}','SampahController@show')->name('show');
+Route::get('/showsampah/{id}','SampahController@show')->name('showsampah');
 Route::post('/editstatus/{id}','SampahController@editstatus')->name('editstatus');
-
 Route::resource('datasampah','DataSampahController');
 Route::get('/delete-sampah/{id_sampah}','DataSampahController@destroy')->name('delete-sampah');
 Route::get('/show-sampah/{id_sampah}','DataSampahController@destroy')->name('delete-sampah');
@@ -47,10 +46,8 @@ Route::get('/invoicetransaksi/{id_transaksi}','TransaksiController@invoicetransa
 // Halaman Detail
 Route::resource('detail','DetailController');
 
-// 
 // Route::resource('jual','JualController');
 // Route::resource('penduduk','PendudukController');
-
 
 //Halaman Data Warga
 Route::resource('warga','WargaController');
@@ -59,14 +56,11 @@ Route::get('/tampilan-warga','WargaController@tampilanwarga')->name('tampilan-wa
 Route::get('/card-warga','WargaController@cardwarga')->name('card-warga');
 Route::get('/delete-warga/{id}','WargaController@destroy')->name('delete-warga');
 
-
-
 //Halaman Data Tabungan
 Route::resource('tabungan','TabunganController');
 Route::get('/detail-tarik','TabunganController@detailtarik')->name('detail-tarik');
 Route::get('/invoice','TabunganController@invoice')->name('invoice');
 
-// 
 
 //Halaman Penjualan
 Route::resource('pengajuanharga','PengajuanController');
@@ -91,7 +85,6 @@ Route::get('edit-detail','DetailController@edit')->name('edit-detail');
 Route::get('/delete-detail/{id_detail}','DetailController@destroy')->name('delete-detail');
 Route::get('/cetak-detail','DetailController@cetakdetail')->name('cetak-detail');
 
-
 //Halaman Penarikan
 // Route::resource('penarikan','PenarikanController ');
 Route::get('/data-penarikan','PenarikanController@index')->name('data-penarikan');
@@ -108,7 +101,6 @@ Route::get('/halamanuser', [RegisterController::class, 'sampahuser']);
 Route::get('/exportpdf','WargaController@exportpdf')->name('exportpdf');
 
 
-
 //MEMBAGI HALAMAN
 // Route::get('/halamansatu','InfromasiController@halamansatu')->name('halamansatu');
  Route::get('/profil','InfromasiController@profil')->name('profil');
@@ -116,9 +108,7 @@ Route::get('/exportpdf','WargaController@exportpdf')->name('exportpdf');
 
  Route::get('/transaksiuser','halamanuserController@index')->name('transaksiuser');
 
-
  //HALAMAN LAPORAN DOMPDF 
-
  Route::get('/data-warga-pdf','WargaController@downloadpdf')->name('data-warga-pdf');
  Route::get('/data-sampah-pdf','SampahController@downloadpdf')->name('data-sampah-pdf');
  Route::get('/data-invoice-pdf','TransaksiController@pdf')->name('data-invoice-pdf');
@@ -126,3 +116,21 @@ Route::get('/exportpdf','WargaController@exportpdf')->name('exportpdf');
 
  
  Route::get('analisa','AnalisaController@index')->name('analisa');
+
+
+ //HALAMAN PETUGAS JEMPUT
+ Route::resource('petugasjemput', 'PetugasjemputController');
+ Route::get('/show/{id}','PetugasjemputController@show')->name('show');
+ Route::get('/delete-sampah/{id}','PetugasjemputController@destroy')->name('delete-sampah');
+ Route::post('/edit/{id}','PetugasjemputController@update')->name('edit');
+
+ Route::get('/createdetail{id}','PetugasjemputController@createdetail')->name('createdetail');
+ Route::get('/indexdetail{id}','PetugasjemputController@indexdetail')->name('indexdetail');
+ Route::post('/createdetaill','PetugasjemputController@storee')->name('createdetaill');
+
+ //Halaman Data Bank sampah
+ Route::resource('Banksampah','KantorCabangController');
+ Route::post('/edit/{id}','KantorCabangController@update')->name('edit');
+ Route::get('/delete-bank/{id}','KantorCabangController@destroy')->name('delete-bank');
+ Route::get('/showdata','KantorCabangController@show')->name('showdata');
+ 

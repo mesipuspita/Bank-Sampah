@@ -11,7 +11,7 @@
 					</span>
 					<div class="media-body text-white text-right">
 					    <p class="mb-1">Jumlah Nasabah</p>
-					    <h4 class="text-white" style="">{{ $warga }}</h4>
+					    <h4 class="text-white" style="">{{$warga }}</h4>
 				    </div>
 			    </div>
 		    </div>
@@ -89,6 +89,7 @@
                                         </div>
                                           <div class="new-arrival-content text-center mt-3">
                                             <h4>Kertas</h4>
+                                            <span>{{$tabungan}}</span>
                                             <span><p>Kerdus/koran/Buku adalah jenis kertas - kertasan yang bisa didaurulang, 
                                               kertas termasuk kedalam daftar yang bisa ditukarkan ke Bank sampah ini, harga untuk penukaran 
                                               sampah menjadi uang untuk kertas ini sudah ditentukan dalam table data sampah dibawah ini.

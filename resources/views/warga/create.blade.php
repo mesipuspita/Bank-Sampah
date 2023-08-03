@@ -23,7 +23,7 @@
     </div>
 @endif
    
-<form action="{{ route('warga.store') }}" method="POST">
+<form action="{{ route('warga.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="card">
         <div class="card-header">
@@ -42,26 +42,8 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Status Pengguna</strong>
-                        <select type="text" name="statuspengguna" class="form-control" placeholder="">
-                            <option value="Islam">Angota</option>
-                            <option value="Kristen">Admin</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
                         <strong>Nama</strong>
                         <input type="text" name="nama_warga" class="form-control" placeholder="">
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Gender</strong>
-                        <select type="text" name="gender" class="form-control" placeholder="">
-                        <option value="Laki - Laki">Laki - Laki</option>
-                        <option value="Perempuan">Perempuan</option>
-                        </select> 
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -79,48 +61,17 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Agama</strong>
-                        <select type="text" name="agama" class="form-control" placeholder="">
-                        <option value="Islam">Islam</option>
-                        <option value="Kristen">Kristen</option>
-                        <option value="Hindu">Hindu</option>
-                        <option value="Budha">Budha</option>
-                        <option value="Lainnya">Lainnya</option>
-                    </select>
-                    </div>    
-                </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Pendidikan</strong>
-                        <select type="text" name="pendidikan" class="form-control" placeholder="">
-                        <option value="SD/Sederajat">SD/Sederajat</option>
-                        <option value="SMP/sederajat">SMP/sederajat</option>
-                        <option value="SMA/sederajat">SMA/sederajat</option>
-
-                        </select>
+                        <strong>Alamat</strong>
+                        <input type="text" name=" statustinggal" class="form-control" placeholder="">
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Pekerjaan</strong>
-                        <select type="text" name="pekerjaan" class="form-control" placeholder="">
-                        <option value="Wiraswasta">Wiraswasta</option>
-                        <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
-                        <option value="Pelajar/Mahasiswa">Pelajar/Mahasiswa</option>
+                <div class="col-lg-6">
+                    <select type="text" class="form-control" id="id_cabang" name="id_cabang" placeholder="Enter a username..">
+                        <option value="">-Pilih</option>
+                        @foreach($kantorcabang as $item)
+                        <option value="{{$item->id_cabang}}">{{$item->nama_bs}}</option>
+                    @endforeach
                     </select>
-                    </div>
-                </div>
-
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Alamat </strong>
-                        <Select type="text" name="statustinggal" class="form-control" placeholder="">
-                        <option value="Jambak 1">Jambak 1</option>
-                        <option value="Jambak 2">Jambak 2</option>
-                        <option value="Galoro">Galoro</option>
-                        <option value="Lubuak Aro">Lubuak Aro</option>
-                    </select>
-                    </div>
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-primary">Simpan</button>

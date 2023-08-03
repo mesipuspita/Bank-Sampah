@@ -1,83 +1,15 @@
 
 @extends('master')
 @section('content')
-  <div class="container-fluid">
-    <div class="row">
-        <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-
-          <div class="card">
-            <div class="card-body">
-              <div class="new-arrival-product">
-                    <div class="new-arrivals-img-contnent">
-                      <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
-                    </div>
-                      <div class="new-arrival-content text-center mt-3">
-                        <h4>Kertas</h4>
-                        <span><p>Kerdus/koran/Buku adalah jenis kertas - kertasan yang bisa didaurulang, 
-                          kertas termasuk kedalam daftar yang bisa ditukarkan ke Bank sampah ini, harga untuk penukaran 
-                          sampah menjadi uang untuk kertas ini sudah ditentukan dalam table data sampah dibawah ini.
-                        </p></span>
-                      </div>
-                      </div>
-                    </div>
-               </div>
-            </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="new-arrival-product">
-                                    <div class="new-arrivals-img-contnent">
-                                        <img class="img-fluid" src="{{asset('asset/image/Botol Palastik.jpg')}}"alt="">
-                                    </div>
-                                    <div class="new-arrival-content text-center mt-3">
-                                        <h4>Botol Plastik</h4>
-                                        <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
-                                          yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
-                                          utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
-                                        </p></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="new-arrival-product">
-                                    <div class="new-arrivals-img-contnent">
-                                        <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
-                                    </div>
-                                    <div class="new-arrival-content text-center mt-3">
-                                      <h4>Botol Plastik</h4>
-                                      <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
-                                        yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
-                                        utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
-                                      </p></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-4 col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="new-arrival-product">
-                                    <div class="new-arrivals-img-contnent">
-                                        <img class="img-fluid" src="{{asset('asset/image/Besi.jpg')}}" alt="">
-                                    </div>
-                                    <div class="new-arrival-content text-center mt-3">
-                                        <h <h4>Botol Plastik</h4>
-                                          <span> <p>Botol plastik merupakan suatu barang yang bisa didaur ulang, botol plastik 
-                                            yang masuk kriteria yang bisa dijual sudah ditentukan pada SOP penjualan barang dihalaman 
-                                            utama , harga penjualan dapat berubah - ubah sesuai pesanan dan penjualan pasar.
-                                          </p></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>  
-                    
+<div class="row">
+  <div class="col-12">
+      <div class="card">
+          <div class="card-body">
+              <div class="form-validation">
+                  <form class="form-valide" action="{{ route('transaksi.store') }}" method="post">
+                      @csrf
+                      <div class="row">
+                          
     <div class="row">
       <div class="col-lg-12 margin-tb">
         <div class="pull-left">
@@ -112,7 +44,6 @@
                             <th scope="col">Satuan</th>
                             <th scope="col">harga</th>
                             <th scope="col">Deskripsi</th>
-                            <th scope="col">Status</th>
                             <th scope="col">Aksi</th>
                             <!-- <th scope="col">Id Satuan</th>          -->
                           </tr>
@@ -126,7 +57,7 @@
                         <td>{{$item->satuan}}</td>
                         <td>{{$item->harga}}</td>
                         <td>{{$item->keterangan}}</td>
-                        @if($item->status==1)
+                        {{-- @if($item->status==1)
                         <td> 
                         <span class="btn btn-success btn-sm"> Yes <i class="fa fa-check"></i></span> 
                         </td>
@@ -134,13 +65,13 @@
                         <td> 
                             <span class="btn btn-warning btn-sm"> No <i class="fa-solid fa-X"></i></span> 
                         </td>
-                        @endif 
+                        @endif  --}}
                         <td>
                             <div class="ml-auto">
-                              <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-warning btn-xs sharp mr-1"><i class="fa fa-book"></i></a>
+                              {{-- <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-warning btn-xs sharp mr-1"><i class="fa fa-book"></i></a> --}}
                               <a href="{{ route('sampah.edit',$item->id_sampah) }}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                               <a href="{{ url('delete-sampah',$item->id_sampah) }}" onclick="return confirm('yakin?')" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>
-                              <a href="{{ route('show',$item->id_sampah)}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
+                              <a href="{{ route('showsampah',$item->id_sampah)}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
                              
                             </div>
                          </td>

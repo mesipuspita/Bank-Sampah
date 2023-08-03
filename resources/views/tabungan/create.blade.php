@@ -12,7 +12,7 @@
     @endif
     <form action="{{ route('tabungan.store') }}" method="POST">
     @csrf
-    <div class="card">
+    <div class="card">g
         <div class="card-header">
         <div class="col-12">
                         <div class="card">

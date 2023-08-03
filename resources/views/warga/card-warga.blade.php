@@ -2,7 +2,6 @@
 @section('content')
 
   <div class="container-fluid">
-      
       <div class="row">
           <div class="col-xl-6">
             <div class="card text-white bg-success">

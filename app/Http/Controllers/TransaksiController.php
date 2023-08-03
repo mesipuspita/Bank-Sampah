@@ -20,7 +20,6 @@ class TransaksiController extends Controller
     public function index()
     {
         $data = DB::table('transaksi')
-        
         ->leftJoin('wargas','transaksi.user_id','=','wargas.id_warga')
         ->paginate(5);
         return view('transaksi.index',compact('data'));
@@ -65,7 +64,6 @@ class TransaksiController extends Controller
          ]);
         
         $transaksi = new Transaksi;
-       
         $transaksi->user_id = $request->nama_warga;
         $transaksi->tgltransaksi = $request->tgltransaksi;
         $transaksi->save();

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Sampah;
 use Barryvdh\DomPDF\PDF;

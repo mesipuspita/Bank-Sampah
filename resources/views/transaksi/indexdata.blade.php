@@ -62,18 +62,11 @@
                             <th scope="col">Harga/kg</th>
                             <th scope="col">Total Jumlah</th>
                             <th scope="col">Bukti Transaksi</th>
-                            <th scope="col">Aksi/th>
+                            <th scope="col">Aksi</th>
                            
                         </tr>
                             @foreach($dtdetail as $no =>$item)
                         <tr> 
-                          <td>
-                            <div class="checkbox mr-0 align-self-center">
-                              <div class="custom-control custom-checkbox checkbox-info">
-                                <input type="checkbox" class="custom-control-input" id="customCheckBox2" required="">
-                                <label class="custom-control-label" for="customCheckBox2"></label>
-                              </div>
-                            </div>
                           
                         <th scope="row">{{ $no+1}}</th>
                           </td>

@@ -1,23 +1,23 @@
 <?php
-
 namespace App\Http\Controllers;
 use App\Warga;
+use App\KantorCabang;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Polyfill\Intl\Idn\Resources\unidata\Regex;
 
 class WargaController extends Controller
 {
     public function index()
     {
-        
-        $title = 'Data Warga';
+        $title = 'Data Anggota';
+        $datas['data'] = DB::table('kantorcabang')->get();
         $data = DB::table('wargas')
         ->leftJoin('users','users.id','=','wargas.id_warga')->get();
         return view('warga.index',compact('data','title'));
     }
-
     public function exportpdf()
     {
         $expo = warga :: all();
@@ -39,7 +39,7 @@ class WargaController extends Controller
         $tampilan = DB::table('sampah')->get();
         return view('warga.tampilan-warga',compact('tampilan','title'));
     }
-    public function cardwarga()
+    public function cardwarga(Request $request,$id)
     {
         $title = 'Kartu Anggota';
         $cetakcard = DB::table('wargas')->get();
@@ -47,8 +47,10 @@ class WargaController extends Controller
     }
     public function create()
     {
-        
-        return view('warga.create');
+        $kantorcabang = KantorCabang::all();
+        $data['data'] = DB::table('wargas')->get();
+        $data['data'] = DB::table('kantorcabang')->get();
+        return view('warga.create',$data,compact('kantorcabang'));
     }
     /**
      * Store a newly created resource in storage.
@@ -59,27 +61,32 @@ class WargaController extends Controller
      */
     public function store(Request $request)
     {
+        // return $request;
          $title = 'Tambah Data Warga';
-        $request->validate([
-            'nokk'           => 'required',
-            'nik'            => 'required',
-            'statuspengguna' => 'required',
-            'nama_warga'     => 'required',
-            'gender'         => 'required',
-            'tgllahir'       => 'required',
-            'notelepon'      => 'required',
-            'agama'          => 'required',
-            'pendidikan'     => 'required',
-            'pekerjaan'      => 'required',
+         $request->validate([
+             'nokk'           => 'required',
+             'nik'            => 'required',
+             'nama_warga'     => 'required',
+             'tgllahir'       => 'required',
+             'notelepon'      => 'required',
             'statustinggal'  => 'required',
-        ]);
-        Warga::create($request->all());
-        return redirect()->route('warga.index')->with('success','Data berhasil di input');
+             'id_cabang'      => 'required',
+             
+         ],);
+         $warga = new Warga;
+         $warga->nokk = $request->nokk;
+         $warga->nik = $request->nik;
+         $warga->nama_warga = $request->nama_warga;
+         $warga->tgllahir = $request->tgllahir;
+         $warga->notelepon = $request->notelepon;
+         $warga->statustinggal = $request->statustinggal;
+         $warga->id_cabang = $request->nama_bs;
+         Warga::create($request->all());
+         return redirect()->route('warga.index')->with('success','Data berhasil di input');
     }
-    public function destroy(Warga $warga,$idwarga)
+    public function destroy($id)
     {
-
-        $warga->find($idwarga)->delete();
+        $warga= Warga::find($id)->delete();
         return redirect()->route('warga.index')->with('success','Data berhasil dihapus');
     }
     public function downloadpdf()
@@ -93,8 +100,6 @@ class WargaController extends Controller
     {
         $warga =Warga::findorfail($id);
         $warga ->gender = $request->gender;
-        
-        
         return redirect()->route('warga.edit')->with('success','sampah berhasil di update');
     }
  

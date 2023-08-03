@@ -12,8 +12,6 @@
 							<span class="nav-text">Dashboard</span>
 					</a>
                     </li>
-
-
                     <li><a href="{{ url('warga')}}" class="ai-icon" aria-expanded="false">
 							<i class="flaticon-381-settings-2"></i>
 							<span class="nav-text">Kelola Data Warga</span>
@@ -26,15 +24,19 @@
                         <ul aria-expanded="false">
                             <li><a href="{{url('sampah')}}">Kategori Sampah</a></li>
                         </ul>
+						<ul aria-expanded="false">
+                            <li><a href="{{url('Banksampah')}}">Data Bank Sampah</a></li>
+                        </ul>
                     </li>
-                    <!-- <li><a class="has-arrow ai-icon" href="{{url('pengajuanharga')}}" aria-expanded="false">
+                    <li><a class="has-arrow ai-icon" href="{{ url('petugasjemput')}}" aria-expanded="false">
 							<i class="flaticon-381-layer-1"></i>
-							<span class="nav-text">Perubahan Harga Sampah</span>
+							<span class="nav-text">Petugas Jemput</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{('pengajuanharga')}}">Kelola Harga</a></li>
+                            <li><a href="{{ url('petugasjemput')}}">Jadwal Petugas Jemput</a></li>
                         </ul>
-                    </li> -->
+                    </li>
+
                     
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-heart"></i>
@@ -82,7 +84,7 @@
                         <ul aria-expanded="false">
                                     <li><a href="{{ url('user')}}">User</a></li>
                                 </ul>
-                        </li>
+				</li>
                     </li>
 					{{-- <div <a href="#" class="d-block">{{auth()->user()->name }}</a> </div> --}}
 					{{-- </li>
