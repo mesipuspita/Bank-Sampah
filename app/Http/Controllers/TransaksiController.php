@@ -70,7 +70,7 @@ class TransaksiController extends Controller
          return redirect()->route('transaksi.index')->with('toast_success', 'Data Berhasil Tersimpan');
      }
 
-    public function invoicetransaksi(Request $request){
+    public function invoicetransaksi(Request $request,$id){
         // $invoice =Transaksi::where('id_transaksi,$id_transaksi')->first();
         // dd($invoice);
         // if(is_null($invoice));{

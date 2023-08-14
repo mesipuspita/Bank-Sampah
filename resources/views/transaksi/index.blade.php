@@ -56,7 +56,7 @@
                                                     <a href="{{ route('transaksi.edit',$item->id_transaksi) }}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                                     <a href="{{ route('createdata',[$item->id_warga, $item->id_transaksi])}}" class="btn btn-info btn-xs sharp mr-1"><i class="fa fa-plus"></i></a>
                                                     <a href="{{ route('indexdata',[$item->id_warga, $item->id_transaksi])}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
-                                                    <a href="{{ route('invoicetransaksi',[$item->id_transaksi])}}" class="btn btn-warning btn-xs sharp mr-1"><i class="fa fa-file" style='color: white'></i></a> 
+                                                    <a href="{{ route('invoicetransaksi',[$item->id_warga, $item->id_transaksi])}}" class="btn btn-warning btn-xs sharp mr-1"><i class="fa fa-file" style='color: white'></i></a> 
 
                                                     {{-- <a href="{{ url('create-detail',[$item->id_warga, $item->id_transaksi])}}"class="btn btn-info btn-xs sharp mr-1"><i class="fa fa-plus"></i></a>
                                                     <a href="{{ route('data-detail',[$item->id_warga, $item->id_transaksi])}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a> --}}

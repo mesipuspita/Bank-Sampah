@@ -28,7 +28,7 @@
                       <th >Jumlah KIlo</th>
                       <th >Total Jumlah</th>
                   </tr>
-                  @foreach($dtcetak as $item)
+                  @foreach($CetakPertanggal as $item)
                    <tr>
                       <td>{{$loop->iteration}}</td>
                       <td>{{$item->nama_warga}}</td>

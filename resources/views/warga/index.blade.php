@@ -39,7 +39,7 @@
                             <td>{{$item->nama_warga}}</td>
                             <td>{{$item->notelepon}}</td>
                             <td>{{$item->statustinggal}}</td>
-                            <td>{{$item->id_cabang}}</td>
+                            <td>{{$item->nama_bs}}</td>
                             {{-- <td>
                             <a href="{{ route('card-warga',$item->id_warga)}}"><i class="btn btn-danger fa fa-id-card" aria-hidden="true"></i></a>
                             </td> --}}
@@ -50,6 +50,7 @@
                                 <a href="{{route('tampilan-warga')}}" class="btn btn-success btn-xs sharp mr-1"><i class="fa fa-eye"></i></a>
    
                               </div>
+                              
                            </td>
                            
                           </tr>

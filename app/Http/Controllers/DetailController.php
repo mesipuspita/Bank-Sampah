@@ -4,6 +4,7 @@ use App\Detail;
 use App\Sampah;
 use App\Transaksi;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Http\Request;
 
@@ -118,7 +119,22 @@ class DetailController extends Controller
         $data = Detail::findorfail($id_detail);
         $data->delete();
     }
+
     public function cetakdetail()
+    {
+        $title = 'Transaksi';
+        $dtcetak = DB::table('detail_transaksi')
+        ->leftJoin('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
+        ->leftJoin('sampah','sampah.id_sampah','=','detail_transaksi.id_sampah')
+        ->leftJoin('wargas','wargas.id_warga','=','detail_transaksi.id_warga')
+        ->leftJoin('transaksi','transaksi.id_transaksi','=','detail_transaksi.id_transaksi')
+        ->get();
+
+        $pdf = FacadePdf::loadView('detail.cetak-detail', compact('dtcetak','title'));
+        $pdf->setPaper('A4','potret');
+        return $pdf->stream('detail.download.pdf');
+    }
+    public function cetakdetaill()
     {
         $title = 'Transaksi';
         $dtcetak = DB::table('detail_transaksi')
@@ -129,5 +145,24 @@ class DetailController extends Controller
         ->get();
         // dd($dtdetail);
         return view('detail.cetak-detail', compact('dtcetak','title'));
+    }
+     public function cetaklaporantransaksi()
+    {
+        return view('detail.cetaklaporantransaksi');
+    }
+    public function CetakPegawaiPertanggalDetail($tglawal, $tglakhir)
+    {
+        // dd("Tanggal Awal : ".$tglawal, "Tanggal Akhir : ".$tglakhir);
+        // $CetakPertanggal =  DB::table('detail_transaksi')
+        // ->join('satuan','satuan.id_satuan','=','detail_transaksi.id_satuan')
+        // ->join('sampah','sampah.id_sampah','=','detail_transaksi.id_sampah')
+        // ->Join('wargas','wargas.id_warga','=','detail_transaksi.id_warga')
+        // ->whereBetween('detail_transaksi.created_at', [$tglawal, $tglakhir])
+        // ->get();
+        
+        $CetakPertanggal = Detail:: with('transaksi','sampah')->whereBetween('created_at',[$tglawal,$tglakhir])->get();
+        // // kalau urutannya diganti tinggal tambahin ->latest() pada bagian sebelum get()
+        return view('detail.Cetak-LaporanPertanggal', compact('CetakPertanggal'));
+        
     }
 }

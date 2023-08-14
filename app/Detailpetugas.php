@@ -10,6 +10,6 @@ class Detailpetugas extends Model
     protected $table ="detailjemput";
     protected $primaryKey="detail_id";
     protected $fillable = [
-    	'detail_id','id_petugas','id_cabang','hari','tanggal'
+    	'detail_id','id_petugas','id_cabang','hari','jamjemput','tanggal'
     ];
 }

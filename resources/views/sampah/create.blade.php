@@ -4,12 +4,7 @@
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>Tambah Data Sampah</h2>
-        </div>
-                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('sampah.index') }}"> Kembali</a>
-                 </div>
-            </div>
-    </div>
+  
    
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -63,6 +58,10 @@
                 
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                             <button type="submit" class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary"href="{{ route('sampah.index') }}">Kembali</button>
+                        </div>
+
+                   </div>
                     </div>
                 </div>
             

@@ -12,7 +12,7 @@
     @endif
     <form action="{{ route('tabungan.store') }}" method="POST">
     @csrf
-    <div class="card">g
+    <div class="card">
         <div class="card-header">
         <div class="col-12">
                         <div class="card">
@@ -26,7 +26,7 @@
                                     <select type="text" class="form-control" onchange="detectChange(this)" id="nama_warga" name="nama_warga" placeholder="Enter a username..">
                                             @foreach($data as $item)
                                                 <option value="{{$item->id_warga}}"  data-nik="{{$item->nik}}" data-totaltabungan="{{$item->nik}}" > {{$item->nama_warga}} </option>
-                                                
+                                            
                                             @endforeach
                                         </select>
                                     </div>

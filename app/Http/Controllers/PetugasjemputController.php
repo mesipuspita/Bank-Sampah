@@ -41,7 +41,6 @@ class PetugasjemputController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_petugas' => 'required',
             'nama_petugas' => 'required',
             'nohp' => 'required',
             'alamat_petugas' => 'required',
@@ -97,38 +96,37 @@ class PetugasjemputController extends Controller
         return redirect()->route('petugasjemput.index')->with('info','Petugas berhasil dihapus');
     }
 
-
-
-
-
-    public function indexdetail(Petugas $petugas,$id)
+    public function indexdetail(Detailpetugas $detailpetugas,$id)
     {
-        $data = DB::table('detailjemput')->get();
+        $data = DB::table('detailjemput')
+        ->leftJoin('petugasjemput','petugasjemput.id_petugas','=','detailjemput.detail_id')
+        ->leftJoin('wargas','wargas.id_warga','=','detailjemput.detail_id')
+        ->leftJoin('sampah','sampah.id_sampah','=','detailjemput.detail_id')->get();
         return view('petugasjemput.indexdetail',compact('data'));
     }
 
-    public function createdetail(Petugas $petugas,$id)
+    public function createdetail(Detailpetugas $detailpetugas,$id)
     {
-        $data = $petugas->find($id);
+        $data = $detailpetugas->find($id);
         $kantorcabang = KantorCabang::all();
-        $petugas = DB::table('detailjemput')->paginate(50);
-
+        $detailpetugas = DB::table('detailjemput')
+        ->leftJoin('petugasjemput','petugasjemput.id_petugas','=','detailjemput.detail_id')
+        ->leftJoin('wargas','wargas.id_warga','=','detailjemput.detail_id')
+        ->leftJoin('sampah','sampah.id_sampah','=','detailjemput.detail_id')->get();
         return view('petugasjemput.createdetail',compact('data','kantorcabang'));
     }
 
     public function storee(Request $request)
     {
         $request->validate([
-                'id_petugas'     => 'required',
                 'id_cabang'      => 'required',
                 'hari'           => 'required',
+                'jamjemput'      => 'required',
                 'tanggal'        => 'required',
             ]);
             return redirect('indexdetail')->with('toast_success', 'Data Berhasil Tersimpan');
     }
     
-  
-  
     public function showdetail(Petugas $petugas,$id)
     {
         $data = $petugas->find($id);

@@ -6,7 +6,7 @@ class Detail extends Model
 {
     protected $table ="detail_transaksi";
     protected $primaryKey="id_detail";
-    protected $fillable = ['id_detail','id_sampah','id_warga','total','gambar','total_jumlah','id_satuan ','id_transaksi'];
+    protected $fillable = ['id_detail','id_sampah','id_warga','total','gambar','total_jumlah','id_satuan ','id_transaksi','created_at'];
     
     public function satuan()
     {

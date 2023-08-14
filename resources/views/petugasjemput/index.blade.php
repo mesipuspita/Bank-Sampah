@@ -34,7 +34,7 @@
                                 <td>{{$item->alamat_petugas}}</td>
                               <td>
                                 <div class="ml-auto">
-                                  <a href="#" class="btn btn-warning btn-xs sharp mr-1"><i class="fa fa-book"></i></a>
+                                  {{-- <a href="#" class="btn btn-warning btn-xs sharp mr-1"><i class="fa fa-book"></i></a> --}}
                                   <a href="{{ route('createdetail',$item->id_petugas)}}" class="btn btn-info btn-xs sharp mr-1"><i class="fa fa-plus"></i></a>
                                   <a href="{{ route('edit',$item->id_petugas)}}" class="btn btn-primary btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
                                   <a href="{{ url('delete-sampah',$item->id_petugas) }}" onclick="return confirm('yakin?')" class="btn btn-danger btn-xs sharp"><i class="fa fa-trash"></i></a>

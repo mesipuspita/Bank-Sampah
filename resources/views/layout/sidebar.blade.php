@@ -27,6 +27,7 @@
 						<ul aria-expanded="false">
                             <li><a href="{{url('Banksampah')}}">Data Bank Sampah</a></li>
                         </ul>
+						
                     </li>
                     <li><a class="has-arrow ai-icon" href="{{ url('petugasjemput')}}" aria-expanded="false">
 							<i class="flaticon-381-layer-1"></i>
@@ -72,7 +73,10 @@
 							<li><a href="{{ url('cetak-detail')}}" target="_blank">Laporan Detail Transaksi</a></li>
 						</ul>
 						<ul aria-expanded="false">
-							<li><a href="{{ url('sampahuser')}}" target="_blank">Laporan Data User</a></li>
+							<li><a href="{{ url('cetak-laporantransaksi')}}">Laporan Transaksi</a></li>
+						</ul>
+						<ul aria-expanded="false">
+							<li><a href="/data-akun-pdf" target="_blank">Laporan Data User</a></li>
 						</ul>
 						
 					</li>
@@ -101,8 +105,8 @@
 					
                 </ul>
 				<div class="copyright">
-                <center><p>BANKSAM<br/>Desa Tandikat Kecamatan Patamuan</p></center>
-					<p class="op5">Made with <span class="heart"></span> by DexignZone</p>
+                <center><p>BANK SAMPAH<br/>PANCADAYA KOTA PADANG </p></center>
+				<center><p class="op5"> I <span class="heart"></span> Padang</p></center>
 				</div>
 			</div>
         </div>
@@ -112,12 +116,12 @@
         <div class="deznav" style="background-color: #191970 !important;">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
-
                     <li><a href="{{url('informasi')}}" aria-expanded="false">
 							<i class="flaticon-381-networking"></i>
 							<span class="nav-text">Dashboard</span>
 						</a>
                     </li>
+					
                     <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
 							<i class="flaticon-381-notepad"></i>
 							<span class="nav-text">Kelola Data Sampah</span>

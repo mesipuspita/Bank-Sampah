@@ -6,9 +6,7 @@
         <div class="pull-left">
             <h2>Tambah Data Penjual</h2>
         </div>
-         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('warga.index') }}"> Kembali</a>
-        </div>
+        
     </div>
     </div>
    
@@ -66,6 +64,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
+                    <strong>Nama Kantor Cabang</strong>
                     <select type="text" class="form-control" id="id_cabang" name="id_cabang" placeholder="Enter a username..">
                         <option value="">-Pilih</option>
                         @foreach($kantorcabang as $item)
@@ -73,8 +72,10 @@
                     @endforeach
                     </select>
                 </div>
+                <br>
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-primary" href="{{ route('warga.index') }}"> Kembali</button>
                 </div>
             </div>
         </div>

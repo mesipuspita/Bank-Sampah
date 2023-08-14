@@ -68,7 +68,7 @@
                                             <th scope="row">{{ $no+1}}</th>
                                             <td>{{$item->nama_warga}}</td>
                                             <td>{{$item->nik}}</td>
-                                            <td>{{ $detail }}</td>
+                                            <td>{{formatRupiah($detail,true)}}</td>
                                             <td>
                                                 <a href="{{route('tabungan.create')}}" class="btn btn-danger sharp mr-6"><i class='fa fa-money'></i></a> 
                                                 <a href="{{ url('invoice')}}" class="btn btn-info sharp mr-6"><i class="fa fa-eye"></i></a>

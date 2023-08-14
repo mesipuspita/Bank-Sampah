@@ -1,6 +1,8 @@
 
 @extends('master')
 @section('content')
+
+</div>
 <div class="row">
   <div class="col-12">
       <div class="card">
@@ -55,7 +57,7 @@
                         <!-- <td>{{$item->nama_sampah}}</td> -->
                         <td>{{$item->jenis_sampah}}</td>
                         <td>{{$item->satuan}}</td>
-                        <td>{{$item->harga}}</td>
+                        <td>{{formatRupiah($item->harga,true)}}</td>
                         <td>{{$item->keterangan}}</td>
                         {{-- @if($item->status==1)
                         <td> 
@@ -100,7 +102,9 @@
         </div> 
   </div> 
     
-  <div class="pull-left">
+  {{-- <div class="pull-left">
     <a href="{{ route('informasi.index') }}" class="btn">Kembali</a>
-</div>
+</div> --}}
+
 @endsection
+

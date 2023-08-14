@@ -25,7 +25,7 @@
               </span>
               <div class="media-body ml-1">
                 <p class="mb-1 fs-14">Total Tabungan</p>
-                <h3 class="mb-0 text-black font-w600 fs-20">Rp. {{ $detail }}</h3>
+                <h3 class="mb-0 text-black font-w600 fs-20">{{formatRupiah($detail,true)}}</h3>
               </div>
             </div>
           </div>
@@ -74,8 +74,8 @@
                             <td>{{$item->jenis_sampah}}</td>
                             {{-- <td>{{$item->satuan}}</td> --}}
                             <td>{{$item->total}}</td>
-                            <td>{{$item->harga}}</td>
-                            <td>{{$item->total_jumlah}}</td>
+                            <td>{{formatRupiah($item->harga,true)}}</td>
+                            <td>{{formatRupiah($item->total_jumlah,true)}}</td>
                             <td><img width=100 height= 100 src="{{asset('gambardetail/')}}/{{$item->gambar}}"/></td>
                            <td>
                             <a href="#" class="btn btn-danger "><i class="fa fa-trash"></i></a>

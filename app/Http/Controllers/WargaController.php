@@ -15,7 +15,8 @@ class WargaController extends Controller
         $title = 'Data Anggota';
         $datas['data'] = DB::table('kantorcabang')->get();
         $data = DB::table('wargas')
-        ->leftJoin('users','users.id','=','wargas.id_warga')->get();
+        ->leftJoin('users','users.id','=','wargas.id_warga')
+        ->leftJoin('kantorcabang','kantorcabang.id_cabang','=','wargas.id_warga')->get();
         return view('warga.index',compact('data','title'));
     }
     public function exportpdf()
@@ -70,7 +71,7 @@ class WargaController extends Controller
              'tgllahir'       => 'required',
              'notelepon'      => 'required',
             'statustinggal'  => 'required',
-             'id_cabang'      => 'required',
+             'id_cabang'       => 'required',
              
          ],);
          $warga = new Warga;

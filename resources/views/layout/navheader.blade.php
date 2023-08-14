@@ -18,7 +18,7 @@
         <div class="nav-header" style="background-color: #191970 !important;">
             <a href="index.html" class="brand-logo">
                 <div>
-                  <img src="{{asset('asset/image/pancadaya.png')}}" style="right" width="100" height="100" alt="" title="BANK SAMPAH">
+                  <img src="{{asset('asset/image/L.png')}}" style="right" width="100" height="100" alt="" title="BANK SAMPAH">
                   <span class="brand-title">PANCADAYA</span> 
                   
                 </div> 

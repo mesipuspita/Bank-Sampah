@@ -5,11 +5,13 @@ use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use PHPUnit\Framework\Constraint\SameSize;
 
 class SampahController extends Controller
 {
     public function index()
     {
+    //    $datas['SampahChart']= $SampahChart->build();
         $data = DB::table('sampah')
         ->leftJoin('satuan','satuan.id_satuan','=','sampah.id_satuan')
         ->paginate(10);

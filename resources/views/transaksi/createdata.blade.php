@@ -56,8 +56,8 @@
                     <div class="col-xl-9 col-lg-8">
                         <div class="product-detail-content">
                             <!--Product details-->
-                            <div class="new-arrival-content pr">                
-                                <div class="row">
+                            <div class="new-arrival-content pr" id="data">                
+                                <div class="row" id="form">
                                     <div class="col-xl-4 mb-3">
                                         <div class="example">
                                             <p class="mb-1">Kategori Sampah</p>
@@ -90,18 +90,26 @@
                                             <input class="form-control" id="text_harga" type="text" name="harga" value="" readonly>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Total</h4>
-                                            <input  id="text_total" class="form-control"  name="total_jumlah" readonly>
-                                        </div>
-                                    </div>
-
+                                    
+                                    
                                 </div>
-                            </div>
+                                
                             <div class="col-xs-5 col-sm-5 col-md-5">
-                              <h4 class="card-title">Bukti Transaksi</h4>
+                                <div class="row">
+                                    <div class="btn btn-warning fa fa-plus" onclick="duplicate()"></div>
+                                </div>
+                                
+                               
+                    </div>
+                </div>
+                <div class="col-xl-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4 class="card-title">Total</h4>
+                                        <input  id="text_total" class="form-control"  name="total_jumlah" readonly>
+                                    </div>
+                                </div>
+                                <h4 class="card-title">Bukti Transaksi</h4>
                                 <div class="form-group">
                                     <div class="custom-file">
                                         <input type="file" name="gambar" class="custom-file-input">
@@ -110,10 +118,8 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                                <button type="submit" <a class="btn btn-primary fa fa-plus"> Add</a></button>
-                            </div>  
-                    </div>
-                </div>
+                                <button type="submit" <a class="btn btn-primary">Simpan</a></button>
+                            </div> 
             </div>
         </div>              
     </form>
@@ -134,5 +140,16 @@
             var total = berat * harga ;
             document.getElementById("text_total").value = total; 
         }
+        var i = 1;
+        
+        function duplicate(){
+            var form = document.querySelector('#form');
+            var data = document.querySelector('#data');
+            var clone = form.cloneNode(true)
+            clone.id = "form-" + ++i;
+            data.appendChild(clone);
+        }
+
+        
     </script>
 @endsection

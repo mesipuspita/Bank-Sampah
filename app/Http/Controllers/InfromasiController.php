@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Charts\DataSampahChart;
 use App\Warga;
 use App\Sampah;
 use App\Detail;

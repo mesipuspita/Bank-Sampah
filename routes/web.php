@@ -26,6 +26,7 @@ Route::post('/editstatus/{id}','SampahController@editstatus')->name('editstatus'
 Route::resource('datasampah','DataSampahController');
 Route::get('/delete-sampah/{id_sampah}','DataSampahController@destroy')->name('delete-sampah');
 Route::get('/show-sampah/{id_sampah}','DataSampahController@destroy')->name('delete-sampah');
+Route::get('/Grafiksampah','SampahController@grafik');
 
 
 // Halaman Data Transaksi
@@ -42,7 +43,7 @@ Route::post('transaksi/store/{id}','TransaksiController@storee');
 Route::get('/cetak-transaksi','TransaksiController@cetaktransaksi')->name('cetak-transaksi');
 Route::get('/cetaktransaksitanggal/{tglawal}/{tglakhir}','TransaksiController@cetaktransaksitanggal')->name('cetaktransaksitanggal');
 
-Route::get('/invoicetransaksi/{id_transaksi}','TransaksiController@invoicetransaksi')->name('invoicetransaksi');
+Route::get('/invoicetransaksi/{id_warga}/{id_transaksi}','TransaksiController@invoicetransaksi')->name('invoicetransaksi');
 // Halaman Detail
 Route::resource('detail','DetailController');
 
@@ -84,6 +85,8 @@ Route::post('/simpan-detail','DetailController@store')->name('simpan-detail');
 Route::get('edit-detail','DetailController@edit')->name('edit-detail');
 Route::get('/delete-detail/{id_detail}','DetailController@destroy')->name('delete-detail');
 Route::get('/cetak-detail','DetailController@cetakdetail')->name('cetak-detail');
+Route::get('/cetak-laporantransaksi','DetailController@cetaklaporantransaksi')->name('cetak-laporantransaksi');
+Route::get('/CetakPegawaiPertanggalDetail/{tglawal}/{tglakhir}','DetailController@CetakPegawaiPertanggalDetail')->name('CetakPegawaiPertanggalDetail');
 
 //Halaman Penarikan
 // Route::resource('penarikan','PenarikanController ');
@@ -116,7 +119,6 @@ Route::get('/exportpdf','WargaController@exportpdf')->name('exportpdf');
 
  
  Route::get('analisa','AnalisaController@index')->name('analisa');
-
 
  //HALAMAN PETUGAS JEMPUT
  Route::resource('petugasjemput', 'PetugasjemputController');

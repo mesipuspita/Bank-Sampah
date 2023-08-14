@@ -31,13 +31,13 @@
                                 <div class="row align-items-center">
                                     <div class="col-sm-9"> 
                                         {{-- <div class="brand-logo mb-3">
-                                            <img class="logo-compact" width="110" src="{{asset('asset/image/LogoT.png')}}" alt="">
+                                            <img class="logo-compact" width="110" src="{{asset('asset/image/L.png')}}" alt="">
                                         </div> --}}
                                         <span>kecamatan Patamuan<strong class="d-block">Nagari Tandikat</strong>
                                             <strong>Padang Pariaman</strong></span><br>
                                         <small class="text-muted">Sumatera Barat</small>
                                     </div>
-                                    <div class="col-sm-3 mt-3" width="200">  <img src="{{asset('asset/image/LogoT.png')}}" class="img-fluid width110"> </div>
+                                    <div class="col-sm-3 mt-3" width="200">  <img src="{{asset('asset/image/L.png')}}" class="img-fluid width110"> </div>
                                 </div>
                             </div>
                         </div>
@@ -63,8 +63,8 @@
                                         <td>{{$item->jenis_sampah}}</td>
                                         {{-- <td>{{$item->satuan}}</td> --}}
                                         <td>{{$item->total}}</td>
-                                        <td>{{$item->harga}}</td>
-                                        <td>{{$item->total_jumlah}}</td>
+                                        <td>{{formatRupiah($item->harga,true)}}</td>
+                                        <td>{{formatRupiah($item->total_jumlah,true)}}</td>
                                         {{-- <td><img width=50 height= 50 src="{{asset('gambardetail/')}}/{{$item->gambar}}"/></td> --}}
                                        
                                     </tr>
@@ -79,7 +79,7 @@
                                     <tbody>
                                         <tr>
                                             <td class="left"><strong>Subtotal</strong></td>
-                                            <td class="right">$ {{  $detail }}</td>
+                                            <td class="right"> {{formatRupiah($detail,true)}}</td>
                                         </tr>
                                         <tr>
                                             <td class="left"><strong>Total</strong></td>

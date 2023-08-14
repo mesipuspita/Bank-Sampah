@@ -1,8 +1,10 @@
 <?php
 namespace App;
 use Illuminate\Database\Eloquent\Model;
+use App\Trits\HashFormatRupiah;
 class Sampah extends Model
 {
+    use HashFormatRupiah;
     protected $table ="sampah";
     protected $primaryKey="id_sampah";
     protected $fillable = [
